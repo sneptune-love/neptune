@@ -1,3 +1,3 @@
-* [首页](/docs/index)
-* [指南](/docs/guide)
-    * [指南1](/docs/guide-1)
+* [首页](./index)
+* [指南](./guide)
+    * [指南1](./guide-1)

@@ -90,7 +90,29 @@ body信息是对commit的详细描述，可以分成多行；如果有哪些记�
 
 ## 如何强制校验commit信息
 
-推荐一个插件[validate-commit-msg](https://github.com/kentcdodds/validate-commit-msg)
+推荐一个插件[commitlint](https://github.com/conventional-changelog/commitlint#readme)
+
+```
+// 安装依赖，生成commitlint全局命令
+sudo npm i @commitlint/config-conventional @commitlint/cli -g
+
+// 配置config文件，项目根目录下创建commitlint.config.js，内容如下
+
+module.exports = {extends: ['@commitlint/config-conventional']}
+
+// package.json中增加husky，与dep同级
+
+"husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+
+// 安装husky
+
+npm i husky --save-dev
+
+```
 
 
 

@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/common.css">
-  <!-- <link rel="stylesheet" href="/css/vue.css"> -->
 </head>
 
 <body>
@@ -21,11 +20,15 @@
       // 挂载元素
       el: '#app',
       name: 'neptune',
-      repo: 'https://github.com/powercandy/neptune',
+      // 又上角github链接
+      repo: 'https://github.com/powercandy/neptune.cn',
       // 加载自定义导航栏, 设置为 true 后会加载 _navbar.md 文件
       loadNavbar: true,
       coverpage: true,
+      // 首页只展示封面
       onlyCover: true,
+      // 自动合并头部
+      autoHeader: true,
       // basePath: './',
       logo: './static/images/timg.jpg',
       name: 'docsify',
@@ -34,32 +37,27 @@
       executeScript: true,
       // 小屏设备下合并导航栏到侧边栏。
       mergeNavbar: true,
-      // 我们可以通过 {docsify-updated} 变量显示文档更新日期. 并且通过 formatUpdated配置日期格式
+      // 更新时间配置：我们可以通过 {docsify-updated} 变量显示文档更新日期. 并且通过 formatUpdated配置日期格式
       formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
+      // 计数配置
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      },
+      // 错误地址页面配置
+      notFoundPage: true,
     }
   </script>
+   <!-- docsify依赖 -->
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <!-- <script src="/static/js/code.js"></script>
-  <script src="/static/js/code.csharp.js"></script>
-  <script src="/static/js/code.typescript.js"></script>
-  <script src="/static/js/vue.js"></script>
-  <script src="/static/js/plugin.javascript.js"></script>
-  
-  <script src="/static/js/vue.js"></script> -->
-  <!-- docsify依赖 -->
-  <!-- <script src="/static/js/docsify.min.js"></script> -->
-  <!-- 复制功能  -->
+  <!-- 代码块复制插件  -->
   <script src="./static/js/clipboard.js"></script>
-  <!-- 代码高亮功能  -->
-  <!-- <script src="/static/js/code.js"></script> -->
-  <!-- JavaScript代码高亮 -->
-  <!-- <script src="/static/js/plugin.javascript.js"></script> -->
-  <!-- json 代码高亮 -->
-  <!-- <script src="/static/js/code.json.js"></script> -->
-  <!-- typescript 代码高亮 -->
-  <!-- <script src="/static/js/code.typescript.js"></script> -->
-  <!-- c# 代码高亮 -->
-  <!-- <script src="/static/js/code.csharp.js"></script> -->
+  <!-- 计数插件 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 图片预览 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 </body>
 
 </html>

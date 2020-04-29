@@ -100,6 +100,10 @@ sudo npm i @commitlint/config-conventional @commitlint/cli -g
 
 module.exports = {extends: ['@commitlint/config-conventional']}
 
+// 测试commitlint命令
+
+echo 'a' | commitlint  // 会有错误抛出
+
 // package.json中增加husky，与dep同级
 
 "husky": {
@@ -110,7 +114,8 @@ module.exports = {extends: ['@commitlint/config-conventional']}
 
 // 安装husky
 
-npm i husky --save-dev
+npm i husky -g
+
 
 ```
 

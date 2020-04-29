@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <!-- <link rel="stylesheet" href="/css/vue.css"> -->
+</head>
+
+<body>
+  <div id="app">加载中</div>
+  <script>
+    window.$docsify = {
+      // 挂载元素
+      el: '#app',
+      name: 'neptune',
+      repo: 'https://github.com/powercandy/neptune.cn',
+      // 加载自定义导航栏, 设置为 true 后会加载 _navbar.md 文件
+      loadNavbar: true,
+      coverpage: true,
+      onlyCover: true,
+      logo: '/static/images/timg.jpg',
+      name: 'docsify',
+      homepage: '/docs/index.md',
+      // 执行文档里的 script 标签里的脚本，只执行第一个 script (demo)。 如果 Vue 存在，则自动开启。
+      executeScript: true,
+      // 小屏设备下合并导航栏到侧边栏。
+      mergeNavbar: true,
+      // 我们可以通过 {docsify-updated} 变量显示文档更新日期. 并且通过 formatUpdated配置日期格式
+      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!-- <script src="/static/js/code.js"></script>
+  <script src="/static/js/code.csharp.js"></script>
+  <script src="/static/js/code.typescript.js"></script>
+  <script src="/static/js/vue.js"></script>
+  <script src="/static/js/plugin.javascript.js"></script>
+  
+  <script src="/static/js/vue.js"></script> -->
+  <!-- docsify依赖 -->
+  <!-- <script src="/static/js/docsify.min.js"></script> -->
+  <!-- 复制功能  -->
+  <script src="/static/js/clipboard.js"></script>
+  <!-- 代码高亮功能  -->
+  <!-- <script src="/static/js/code.js"></script> -->
+  <!-- JavaScript代码高亮 -->
+  <!-- <script src="/static/js/plugin.javascript.js"></script> -->
+  <!-- json 代码高亮 -->
+  <!-- <script src="/static/js/code.json.js"></script> -->
+  <!-- typescript 代码高亮 -->
+  <!-- <script src="/static/js/code.typescript.js"></script> -->
+  <!-- c# 代码高亮 -->
+  <!-- <script src="/static/js/code.csharp.js"></script> -->
+</body>
+
+</html>

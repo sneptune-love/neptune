@@ -1,8 +1,5 @@
 
 
-## 简述
-
-欢迎来到小凡的世界，希望能有所收获！
 
 <a href="https://github.com/powercandy" style="text-decoration: none; margin-right: 4px;" target="_blank_">
   <img alt="GitHub followers" src="https://img.shields.io/github/followers/powercandy?style=social">
@@ -20,6 +17,11 @@
   <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/powercandy/neptune?style=social">
 </a>
 
+## 简述
+
+
+欢迎来到小凡的世界，希望能有所收获！
+
 
 
 ## 反馈
@@ -36,3 +38,15 @@
   <a data-theme="pure">pure.css</a>
   <a data-theme="dolphin">dolphin.css</a>
 </div>
+
+<style> .demo-theme-preview a { padding-right: 10px; } .demo-theme-preview a:hover { cursor: pointer; text-decoration: underline; } </style> 
+<script> 
+  var preview = Docsify.dom.find('.demo-theme-preview'); 
+  var themes = Docsify.dom.findAll('[data-type="theme"]'); 
+  preview.onclick = function (e) {
+    var title = e.target.getAttribute('data-theme');
+    themes.forEach(function (theme) {
+      theme.disabled = theme.title !== title;
+    }); 
+  }; 
+</script>

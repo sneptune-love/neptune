@@ -1,43 +1,38 @@
 
 
-更新时间：{docsify-updated}
-
 ## 简述
 
-```javascript
-window.$docsify = {
-  alias: {
-    '/foo/(+*)': '/bar/$1', // supports regexp
-    '/zh-cn/changelog': '/changelog',
-    '/changelog':
-      'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG',
-    '/.*/_sidebar.md': '/_sidebar.md', // See #301
-  },
-};
+欢迎来到小凡的世界，希望能有所收获！
 
-```
+<a href="https://github.com/powercandy" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub followers" src="https://img.shields.io/github/followers/powercandy?style=social">
+</a>
 
+<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/powercandy/neptune?style=social">
+</a>
 
-```javascript
-export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'Home',
-            meta: {
-                title: "首页"
-            },
-            component: resolve => require(["@/components/Home"], resolve)
-        }
-    ]
-})
+<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/powercandy/neptune?style=social">
+</a>
+
+<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/powercandy/neptune?style=social">
+</a>
 
 
-```
+
+## 反馈
+
+建议和反馈可以发送到邮件到这个邮箱： 17600112740@163.com
 
 
-## 关于
+## 主题切换
 
-## 感悟
-
-## 术语
+<div class="demo-theme-preview">
+  <a data-theme="vue">vue.css</a>
+  <a data-theme="buble">buble.css</a>
+  <a data-theme="dark">dark.css</a>
+  <a data-theme="pure">pure.css</a>
+  <a data-theme="dolphin">dolphin.css</a>
+</div>

@@ -1,5 +1,7 @@
 
 
+更新时间：{docsify-updated}
+
 # commit规范
 
 commit是其实是一种记录改动的过程，不同的项目不同的团队，都会有不同的记录规范，但最终它们的目的都是为了使这一记录清晰明了；
@@ -14,9 +16,8 @@ commit是其实是一种记录改动的过程，不同的项目不同的团队�
 
 比如我在vue项目下输入如下命令：
 
-```
+```bash
 git log HEAD --grep feat
-
 ```
 
 <img src="https://powercandy.github.io/neptune/static/screenshot/WX20200429-200126@2x.png" alt="" style="width: 600px;">
@@ -40,7 +41,6 @@ commit message规范信息包含header, body, footer三个部分
 <body>
 空行
 <footer>
-
 ```
 其中header是必须的，body, footer可以省略。（PS：重要的改动信息建议把body, footer补上，一般的改动，header即可）
 
@@ -93,15 +93,14 @@ body信息是对commit的详细描述，可以分成多行；如果有哪些记�
 > 推荐一个插件[commitlint](https://github.com/conventional-changelog/commitlint#readme)
 
 安装依赖，生成commitlint全局命令
-```
+```bash
 sudo npm i @commitlint/config-conventional @commitlint/cli -g
 ```
 
 配置config文件，项目根目录下创建commitlint.config.js，内容如下
 
-```
+```js
 module.exports = {extends: ['@commitlint/config-conventional']}
-
 ```
 
 其配置文件如下：
@@ -143,23 +142,19 @@ module.exports = {
 		]
 	}
 };
-
 ```
 
 当然你也可以自己配置type类型和校验规则，只需在commitlint.config.js文件中配置即可
 
 测试commitlint命令
 
-```
-
+```bash
 echo 'a' | commitlint  // 会有错误抛出
-
 ```
 
 package.json中增加husky，与dep同级
 
 ```json
-
 "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
@@ -191,7 +186,6 @@ change log是每一个版本出现时，和上个版本比较的差异，其中�
 $ npm install -g conventional-changelog-cli
 $ cd my-project
 $ conventional-changelog -p angular -i CHANGELOG.md -s
-
 ```
 CHANGELOG.md文件预览
 

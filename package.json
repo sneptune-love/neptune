@@ -26,6 +26,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "node test.js",
       "commit-msg": "echo $HUSKY_GIT_PARAMS"
     }
   }

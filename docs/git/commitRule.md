@@ -168,9 +168,20 @@ package.json中增加husky，与dep同级
 npm i husky --save-dev 
 ```
 
-注意：作者下载的是4.2.5版本husky，需要node版本大于10，git版本大于2.13.0；检查.git目录下hooks中是否生成了不带.sample文件后缀的文件，如果有则代表安装成功，否则安装失败
+注意：
 
+1、作者下载的是4.2.5版本husky，需要node版本大于10，git版本大于2.13.0；检查.git目录下hooks中是否生成了不带.sample文件后缀的文件，如果有则代表安装成功，否则安装失败
 
+2、命令行commit成功能检测，sourcetree commit时直接跳过并抛出找不到npx path问题；原因就是路径匹配不到，此时在~/下面建立.huskyrc文件，文件内容如下：
+
+```
+PATH="/usr/local/bin:$PATH"
+
+```
+
+该path路径就是你node安装的位置，可以用which node 命令来检测位置
+
+[isssue问题传送门](https://github.com/typicode/husky/issues/390)
 
 
 

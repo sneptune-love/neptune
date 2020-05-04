@@ -58,7 +58,7 @@ n    // 输入n回车即可出现安装过的版本列表，上下选择版本�
 
 ```
 
-<img src="/static/screenshot/WX20200504-164515@2x.png" alt="" style="width: 600px;">
+<img src="./static/screenshot/WX20200504-164515@2x.png" alt="" style="width: 600px;">
 
 ## 指定Node版本执行脚本
 

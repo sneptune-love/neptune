@@ -19,7 +19,7 @@
 * Npm
 
 * Node
-    * [Commit规范](/docs/git/commitRule)
+    * [Node版本管理工具n](/docs/node/n)
 
 
 * Git

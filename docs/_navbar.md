@@ -3,15 +3,10 @@
 * Webpack
 
     * [项目环境变量配置](/docs/webpack/env)
-    
-* Vue
-    * [vue介绍](/docs/vue/introduction)
-
-* React
-
-* Ts
 
 * Npm
+
+    * [nrm](/docs/npm/nrm)
 
 * Node
     * [Node版本管理工具n](/docs/node/n)

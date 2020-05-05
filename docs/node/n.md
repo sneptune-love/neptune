@@ -1,5 +1,7 @@
 
-# Node版本管理工具 - n
+更新时间：{docsify-updated}
+
+# Node版本管理工具 n
 
 
 ## 全局安装
@@ -13,20 +15,20 @@ sudo npm i n -g
 
 ```bash
 
-n --help
+n --help || n -h
 ```
 
 ## 查看Node可用版本
 
 ```bash
-n ls
+n list || n ls
 
 ```
 
 ## 安装稳定版本Node
 
 ```bash
-sudo n stable
+sudo n stable || sudo n lts
 
 ```
 

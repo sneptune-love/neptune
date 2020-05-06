@@ -23,3 +23,4 @@
 
 * Git
     * [Commit规范](/docs/git/commitRule)
+    * [Git指令](/docs/git/directive)

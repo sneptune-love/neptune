@@ -3,6 +3,9 @@
 
 * [首页](/docs/index)
 
+* 微信
+    * [相关信息](/docs/wx/info)
+
 * Linux
     * [ls](docs/linux/ls)
     * [du](docs/linux/du)

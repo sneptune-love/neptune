@@ -3,7 +3,7 @@
 
 * [首页](/docs/index)
 
-* 微信
+* Wx
     * [相关信息](/docs/wx/info)
 
 * Linux
@@ -27,3 +27,6 @@
 * Git
     * [Commit规范](/docs/git/commitRule)
     * [Git指令](/docs/git/directive)
+    
+* Tool
+    * [Map](/docs/tool/map.md)

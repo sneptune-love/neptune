@@ -16,6 +16,8 @@
 * Webpack
 
     * [项目环境变量配置](/docs/webpack/env)
+    * [Plugins](/docs/webpack/plugins)
+    * [Loaders](/docs/webpack/loaders)
 
 * Npm
 

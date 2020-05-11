@@ -21,8 +21,8 @@
     * [Loaders](/docs/webpack/loaders)
 
 * Npm
-
     * [nrm](/docs/npm/nrm)
+    * [publish](/docs/npm/publish)
 
 * Node
     * [Node版本管理工具n](/docs/node/n)

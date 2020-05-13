@@ -61,6 +61,15 @@ program
 ```
 
 ### action
+> 执行命令
+
+```js
+program
+    .action((path, options) {
+        // 命令执行
+    })
+
+```
 
 ### parse
 

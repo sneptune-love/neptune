@@ -38,3 +38,14 @@ git config --global user.email '17600112740@163.com'
 
 <img src="./static/screenshot/WX20200506-201920@2x.png" alt="" style="width: 600px;">
 
+
+## git log
+
+
+### git log --pretty
+
+> git log --pretty=one fileName
+
+查看文件的修改的历史提交记录
+
+> git show commitId

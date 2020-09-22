@@ -27,6 +27,7 @@
     * [nrm](/docs/npm/nrm)
     * [publish](/docs/npm/publish)
     * [commander](/docs/npm/commander)
+    * [puppeteer](/docs/npm/puppeteer)
 
 * Node
     * [Node版本管理工具n](/docs/node/n)

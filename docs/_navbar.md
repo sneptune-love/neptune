@@ -1,18 +1,24 @@
 
 
 * [首页](/docs/index)
+    
+* HTML
+    * [基础标签](/docs/html/base)
+    
+* JS
+    * [基础数据](/docs/js/base)
 
-* BASE
-    * [html](/docs/base/html)
-    * [css](/docs/base/css)
-    * [js](/docs/base/js.md)
+* Css
+    * [基础样式](/docs/css/base)
     
-* Vue
-    * [vue-router](/docs/vue/vue-router)
-    * [vuex](/docs/vue/vuex)
-    
-* TS
-    * [ts](/docs/ts/ts)
+* deepJs
+    * [vue](/docs/deepJs/vue/vue)
+    * [vue-router](/docs/deepJs/vue/vue-router)
+    * [vuex](/docs/deepJs/vue/vuex)
+    * [ts](/docs/deepJs/ts/ts)
+    * [react](/docs/deepJs/react/react)
+    * [react-router](/docs/deepJs/react/react-router)
+    * [redux](/docs/deepJs/react/redux)
     
 * Npm
     * [nrm](/docs/npm/nrm)
@@ -44,8 +50,11 @@
     * [Git指令](/docs/git/directive)
 
 * Tool
-    * [Map](/docs/tool/map.md)
+    * [Map](/docs/tool/map)
     
 * Editor
-    * [vscode](/docs/editor/vscode.md)
+    * [vscode](/docs/editor/vscode)
+    
+* Record
+    * [word](/docs/record/word)
     

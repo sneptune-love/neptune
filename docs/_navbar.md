@@ -20,6 +20,7 @@
     * [react](/docs/deepJs/react/react)
     * [react-router](/docs/deepJs/react/react-router)
     * [redux](/docs/deepJs/react/redux)
+    * [微信小程序](/docs/deepJs/miniprogram/index)
     
 * Npm
     * [nrm](/docs/npm/nrm)

@@ -1,66 +1,50 @@
 
 
 * [首页](/docs/index)
-    
-* HTML
-    * [基础标签](/docs/html/base)
-    * [Dom](/docs/html/dom)
-    
-* JS
-    * [基础数据](/docs/js/base)
 
-* Css
-    * [基础样式](/docs/css/base)
+* 基础知识
+    * [HTML](/docs/base/html/index)
+    * [JS](/docs/base/js/index)
+    * [CSS](/docs/base/css/index)
     
-* deepJs
-    * [vue](/docs/deepJs/vue/vue)
-    * [vue-router](/docs/deepJs/vue/vue-router)
-    * [vuex](/docs/deepJs/vue/vuex)
-    * [ts](/docs/deepJs/ts/ts)
-    * [react](/docs/deepJs/react/react)
-    * [react-router](/docs/deepJs/react/react-router)
-    * [redux](/docs/deepJs/react/redux)
-    * [微信小程序](/docs/deepJs/miniprogram/index)
+* 框架
+    * [Vue](docs/frame/vue/index)
+    * [React](docs/frame/react/index)
+    * [Angular](docs/frame/angular/index)
+
+* 构建工具
+    * [Webpack](/docs/build/webpack/index)
+    * [Gulp](/docs/build/gulp/index)
+    * [Rollup](/docs/build/rollup/index)
+    * [Npm](/docs/build/npm/index)
+    * [Git](/docs/build/git/index)
+    * [Eslint](/docs/build/eslint/index)
+    * [TS](docs/build/ts/index)
     
-* Npm
-    * [nrm](/docs/npm/nrm)
-    * [publish](/docs/npm/publish)
-    * [commander](/docs/npm/commander)
-    * [puppeteer](/docs/npm/puppeteer)
-
-* Node
-    * [Node版本管理工具n](/docs/node/install)
-
+* 服务端
+    * [Node](/docs/server/node/index)
+    * [Nginx](/docs/server/nginx/index)
+    * [Linux](/docs/server/linux/index)
+    
+* 微信开发
+    * [公众号](/docs/wx/account/index)
+    * [微信小程序](/docs/wx/miniprogram/index)
+    
+* 其它功能
+    * [收藏Js](/docs/other/collectJs/index)
+    * [收藏Css](/docs/other/collectCss/index)
+    
+* 收集问题
+    * [Git](/docs/problem/index)
+    
+* 编辑器
+    * [Vscode](/docs/editor/vscode/index)
+    * [Webstorm](docs/editor/webstorm/index)
+    * [Autom](/docs/editor/autom/index)
+    * [Hbuilder](/docs/editor/hbuilder/index)
+    
 * Mac
     * [Tree](/docs/mac/tree)
     * [Ffmpeg](/docs/mac/ffmpeg)
 
-* Linux
-    * [ls](docs/linux/ls)
-    * [du](docs/linux/du)
-    
-* Wx
-    * [相关信息](/docs/wx/info)
-    
-* Webpack
-    * [项目环境变量配置](/docs/webpack/env)
-    * [Plugins](/docs/webpack/plugins)
-    * [Loaders](/docs/webpack/loaders)
-    
-* Git
-    * [Commit规范](/docs/git/commitRule)
-    * [Git指令](/docs/git/directive)
-
-* Tool
-    * [Map](/docs/tool/map)
-    
-* Editor
-    * [vscode](/docs/editor/vscode)
-    
-* Record
-    * [word](/docs/record/word)
-    
-* 收集问题
-
-    * [Git](/docs/problem/index)
     

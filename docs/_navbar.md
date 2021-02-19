@@ -60,3 +60,7 @@
 * Record
     * [word](/docs/record/word)
     
+* 收集问题
+
+    * [Git](/docs/problem/index)
+    

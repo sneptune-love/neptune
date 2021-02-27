@@ -1,10 +1,10 @@
 
 * [首页](/docs/index)
 
-* [Git介绍](/docs/git/index)
+* [Git介绍](index)
 
-* [Directive](/docs/git/directive)
+* [Directive](directive)
 
-* [Diff](/docs/git/diff)
+* [Diff](diff)
 
-* [CommitRule](/docs/git/commitRule)
+* [CommitRule](commitRule)

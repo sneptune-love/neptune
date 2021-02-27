@@ -1,6 +1,6 @@
 
 * [首页](/docs/index)
 
-* [JS介绍](/docs/base/js/index)
+* [JS介绍](index)
 
-* [正则](/docs/base/js/regexp)
+* [正则](regexp)

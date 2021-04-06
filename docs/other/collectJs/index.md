@@ -3,7 +3,11 @@
 
 # 收藏Js
 
-# 防抖函数 debounce - 执行最后一个函数
+## 防抖函数 debounce - 执行最后一个函数
+
+<details>
+
+<summary>实现方法</summary>
 
 ```js
 function debounce(fn, wait) {
@@ -19,8 +23,12 @@ function debounce(fn, wait) {
     }
 }
 ```
+</details>
 
-# 节流函数 throttle - 执行第一个函数
+## 节流函数 throttle - 执行第一个函数
+
+<details>
+<summary>实现方法</summary>
 
 ```js
 function throttle(fn, wait) {
@@ -33,10 +41,13 @@ function throttle(fn, wait) {
         }, wait)
     }
 }
-
 ```
+</details>
 
-# 函数只执行一次 once
+## 函数只执行一次 once
+
+<details>
+<summary>实现方法</summary>
 
 ```js
 function once (fn) {
@@ -70,8 +81,12 @@ c(); // 2
 c(); // 无输出  
 
 ```
+</details>
 
-# 删除数组中某一项 removeArrayItem
+## 删除数组中某一项 removeArrayItem
+
+<details>
+<summary>实现方法</summary>
 
 ```js
 function removeArrayItem(array, item) {
@@ -83,8 +98,12 @@ function removeArrayItem(array, item) {
     }
 }
 ```
+</details>
 
-# 重复某个字符串N次repeatStr(时间复杂度O(logN))
+## 重复某个字符串N次repeatStr(时间复杂度O(logN))
+
+<details>
+<summary>实现方法</summary>
 
 ```js
 function repeat (str, n) {
@@ -101,3 +120,4 @@ function repeat (str, n) {
 }
 
 ```
+</details>

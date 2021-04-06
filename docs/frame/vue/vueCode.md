@@ -1,120 +1,317 @@
 
 更新时间：{docsify-updated}
 
-[toc]
-
 # Vue源码解析
 
-## [package.json文件解析](./package)
+## package.json文件解析
 
-## [静态配置文件](./config)
+[package.json文件解析](./package)
 
-## [封装基础函数解析 src/shared/util.js](./util)
+## 静态配置文件
 
-## [src/compiler文件夹解析](./compiler)
+[静态配置文件](./config)
 
-## [src/core文件夹解析](./core)
+## 封装基础函数解析
 
-## [src/platforms文件夹解析](./platforms)
-
-## [src/server文件夹解析](./server)
-
-## [src/sfc文件夹解析](./sfc)
-
-## 初始化流程解析
-
-### 入口文件: src/core/index.js
-
-### 入口文件: src/platform/web/entry-runtime.js -> runtime/index.js
-
-    引入Vue, 原型挂载$mount
+[封装基础函数解析 src/shared/util.js](./util)
 
 
-### 创建Vue对象，调用_init方法
+## 流程解析
 
-    initMixin、stateMixin、eventsMixin、lifecycleMixin、renderMixin 对Vue对象进行属性和方法的添加
+### src/platforms/web/entry-runtime-with-compiler.js
 
-#### initMixin(Vue)
+1. 引入Vue文件，
 
-    在Vue原型prototype上挂载_init方法
+2. 定义Vue.prototype.$mount函数
+
+3. Vue定义compile方法
+
+
+```非生产环境抛出异常提示 --- el挂载元素不能是body或者html，更换其他正常元素```
+
+```Do not mount Vue to <html> or <body> - mount to normal elements instead.```
+
+
+```js
+import Vue from './runtime/index'
+
+Vue.prototype.$mount = ...
+Vue.compile = ...
+```
+
+#### src/platforms/web/runtime/index.js
+
+1. 引入Vue文件
+
+2. Vue.config上绑定五个方法mustUseProp、isReservedTag、isReservedAttr、getTagNamespace、isUnknownElement，用于元素标签筛选
+
+3. 扩展Vue.options.directives和扩展Vue.options.components
+
+4. Vue原型挂载__patch__属性
+
+5. 定义Vue.prototype.$mount函数，函数内部实现三个生命周期函数beforeMount，beforeUpdate，mounted
+
+<details>
+
+```js
+    ...
+    callHook(vm, 'beforeMount')
+    ...
+    new Watcher(vm, updateComponent, noop, {
+        before () {
+            if (vm._isMounted && !vm._isDestroyed) {
+                callHook(vm, 'beforeUpdate')
+            }
+        }
+    }, true /* isRenderWatcher */)
+    ...
+    if (vm.$vnode == null) {
+        vm._isMounted = true
+        callHook(vm, 'mounted')
+    }
+
+```
+</details>
+
+6. 控制台输出Devtools开发工具提示 + 开发环境提示信息
+
+
+```js
+import Vue from 'core/index'
+import { mountComponent } from 'core/instance/lifecycle'
+
+Vue.prototype.$mount
+Vue.config.mustUseProp = mustUseProp
+Vue.config.isReservedTag = isReservedTag
+Vue.config.isReservedAttr = isReservedAttr
+Vue.config.getTagNamespace = getTagNamespace
+Vue.config.isUnknownElement = isUnknownElement
+extend(Vue.options.directives, platformDirectives)
+extend(Vue.options.components, platformComponents)
+Vue.prototype.__patch__ = inBrowser ? patch : noop
+Vue.prototype.$mount = function() {
+    ...
+    return mountComponent(this, el, hydrating)
+}
+
+
+console[console.info ? 'info' : 'log'](
+    'Download the Vue Devtools extension for a better development experience:\n' +
+    'https://github.com/vuejs/vue-devtools'
+)
+
+console[console.info ? 'info' : 'log'](
+    `You are running Vue in development mode.\n` +
+    `Make sure to turn on production mode when deploying for production.\n` +
+    `See more tips at https://vuejs.org/guide/deployment.html`
+)
+
+```
+
+##### src/core/index.js
+
+1. 引入Vue
+
+2. 初始化全局API
+
+<details>
+
+```js
+Object.defineProperty(Vue, 'config', configDef)
+Vue.util = ...
+Vue.set = ...
+Vue.delete = ...
+Vue.nextTick = ...
+Vue.observable = ...
+Vue.options.components = Object.create(null) 
+Vue.options.directive = Object.create(null) 
+Vue.options.filter = Object.create(null)
+extend(Vue.options.components, builtInComponents)
+initUse(Vue)
+initMixin(Vue)
+initExtend(Vue)
+initAssetRegisters(Vue)
+```
+
+</details>
+
+3. 监听Vue.prototype上三个属性$isServer、$ssrContext、FunctionalRenderContext
+4. Vue定义version属性
+
+
+```js
+initGlobalAPI(Vue)
     
-        Options处理
-        
-        initLifecycle(vm)  
-        
-            在Vue上增加$parent、$root、$children、$refs、 _watcher、 _inactive、 _directInactive、 _isMounted、 _isDestroyed、 _isBeingDestroyed属性
-        
-        initEvents(vm)  
-        
-            事件添加, 移除, 一次性事件
-            
-        initRender(vm)
-        
-            $vnode, $slots, $scopedSlots, $createElement, $attrs, $listeners
-            
-        callHook(vm, 'beforeCreate')
-        
-            添加beforeCreate hook
-            
-        initInjections(vm)
-        
-            注入options.inject, 并对注入的属性进行监听
-            
-        initState(vm)
-        
-            初始化props, methods, data, computed, watch
-            
-            初始化provide, 改变this指向
-            
-        callHook(vm, 'created')
-        
-            添加created hook
-            
-        $mount挂载el元素
-        
+Object.defineProperty(Vue.prototype, '$isServer', {...})
+Object.defineProperty(Vue.prototype, '$ssrContext', {...})
+Object.defineProperty(Vue.prototype, 'FunctionalRenderContext', {...})
+Vue.version = '__VERSION__'
     
-#### stateMixin(Vue)
+```
 
-    监听$data, $props
-    
-    原型挂载$set, $delete, $watch
-    
-    
-#### eventsMixin(Vue)
+######  src/core/instance/index.js
 
-    原型挂载 $on, $once, $off, $emit
+1. 定义Vue函数
 
-    
-#### lifecycleMixin(Vue)
+<details>
 
-    原型挂载 _update, $forceUpdate, $destroy(callHook(vm, 'beforeDestroy'), callHook(vm, 'destroyed'))
+```js
+function Vue (options) {
+  if (process.env.NODE_ENV !== 'production' &&
+    !(this instanceof Vue)
+  ) {
+    warn('Vue is a constructor and should be called with the `new` keyword')
+  }
+  this._init(options)
+}
 
-    
-#### renderMixin(Vue)
+```
 
-    原型挂载 $nextTick, _render, 
-    
+</details>
 
-    ASSET_TYPES = [
-        'component',
-        'directive',
-        'filter'
-    ]
-    
-    // 生命周期
-    LIFECYCLE_HOOKS = [
-        'beforeCreate',
-        'created',
-        'beforeMount',
-        'mounted',
-        'beforeUpdate',
-        'updated',
-        'beforeDestroy',
-        'destroyed',
-        'activated',
-        'deactivated',
-        'errorCaptured',
-        'serverPrefetch'
-    ]
+2. 使用五个方法对Vue函数进行初始化。initMixin、stateMixin、eventsMixin、lifecycleMixin、renderMixin
+
+3. initMixin(Vue)
+
+<details>
+
+```js
+Vue.prototype._init = function() {
+    ... 
+    vm._uid
+    vm._isVue
+    vm.$options
+    vm._renderProxy
+    vm._self
+    initLifecycle(vm)
+    initEvents(vm)
+    initRender(vm)
+    callHook(vm, 'beforeCreate')
+    initInjections(vm)
+    initState(vm)
+    initProvide(vm)
+    callHook(vm, 'created')
+    vm.$mount(vm.$options.el)
+}
+   
+
+```
+
+</details>
+
+4. stateMixin(Vue)
+
+
+<details>
+
+```js
+Object.defineProperty(Vue.prototype, '$data', dataDef)
+Object.defineProperty(Vue.prototype, '$props', propsDef)
+Vue.prototype.$set
+Vue.prototype.$delete
+Vue.prototype.$watch
+
+```
+
+</details>
+
+5. eventsMixin(Vue)
+
+<details>
+
+```js
+Vue.prototype.$on
+Vue.prototype.$once
+Vue.prototype.$off
+Vue.prototype.$emit
+
+```
+
+</details>
+
+6. lifecycleMixin(Vue)
+
+<details>
+
+```js
+Vue.prototype._update
+Vue.prototype.$forceUpdate
+Vue.prototype.$destroy
+
+```
+
+</details>
+
+7. renderMixin(Vue)
+
+<details>
+
+```js
+installRenderHelpers(Vue.prototype)
+    target._o = markOnce
+    target._n = toNumber
+    target._s = toString
+    target._l = renderList
+    target._t = renderSlot
+    target._q = looseEqual
+    target._i = looseIndexOf
+    target._m = renderStatic
+    target._f = resolveFilter
+    target._k = checkKeyCodes
+    target._b = bindObjectProps
+    target._v = createTextVNode
+    target._e = createEmptyVNode
+    target._u = resolveScopedSlots
+    target._g = bindObjectListeners
+    target._d = bindDynamicKeys
+    target._p = prependModifier
+Vue.prototype.$nextTick
+Vue.prototype._render
+    vm.$scopedSlots
+    vm.$vnode
+
+```
+
+</details>
+
+
+```js
+
+function Vue (options) {
+  if (process.env.NODE_ENV !== 'production' &&
+    !(this instanceof Vue)
+  ) {
+    warn('Vue is a constructor and should be called with the `new` keyword')
+  }
+  this._init(options)
+}
+
+// console.dir(Vue)
+
+initMixin(Vue)
+stateMixin(Vue)
+eventsMixin(Vue)
+lifecycleMixin(Vue)
+renderMixin(Vue)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

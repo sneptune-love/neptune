@@ -49,7 +49,13 @@ Vue.compile = ...
 
 4. Vue原型挂载__patch__属性
 
-5. 定义Vue.prototype.$mount函数，函数内部实现三个生命周期函数beforeMount，beforeUpdate，mounted
+5. 定义Vue.prototype.$mount函数，函数内部实现三个生命周期函数```beforeMount```，```beforeUpdate```，```mounted```
+
+    - 将el赋值到vm.$el
+    
+    - callHook(vm, 'beforeMount')
+    
+    - 
 
 <details>
 
@@ -114,6 +120,21 @@ console[console.info ? 'info' : 'log'](
 
 2. 初始化全局API
 
+    - 对Vue.config进行监听，非生产环境替换config将抛出warn警告
+    
+    - 暴露Vue.util、Vue.set、Vue.delete、Vue.nextTick、Vue.observable、Vue.options
+    
+        - options中定义components、directives、filters三个空对象，_base值为Vue
+        
+    - initUse(Vue) -- 暴露Vue.use方法
+    
+    - initMixin(Vue) -- 暴露Vue.mixin方法
+    
+    - initExtend(Vue) -- 暴露Vue.extend方法
+    
+    - initAssetRegisters(Vue) -- 暴露Vue.component、Vue.directive、Vue.filter方法
+    
+
 <details>
 
 ```js
@@ -136,6 +157,7 @@ initAssetRegisters(Vue)
 </details>
 
 3. 监听Vue.prototype上三个属性$isServer、$ssrContext、FunctionalRenderContext
+
 4. Vue定义version属性
 
 
@@ -171,7 +193,37 @@ function Vue (options) {
 
 2. 使用五个方法对Vue函数进行初始化。initMixin、stateMixin、eventsMixin、lifecycleMixin、renderMixin
 
-3. initMixin(Vue)
+- initMixin(Vue)，Vue原型挂载_init方法
+
+    - vm增加_uid、_isVue属性，
+    
+    - 将Vue传入的option合并至vm.$options
+    
+    - initLifecycle(vm) -- vm定义初始属性$parent、$root、$children、$refs、_watcher、_inactive、_directactive、_isMounted、_isDestroyed、_isBeingDestroyed
+    
+    - initEvents(vm) -- vm定义初始属性_events、_hasHookEvent
+    
+    - initRender(vm) 
+    
+        - vm定义初始属性_vnode、_staticTrees、$slots、$scopedSlots、_c、$createElement
+        
+        - 对vm.$attrs和vm.$listeners进行监听
+        
+    - 创建```beforeCreate```生命周期
+        
+    - initInjections(vm) -- 初始化注入对象vm.$options.inject
+
+    - initState(vm)
+    
+        - 定义vm._watchers
+        
+        - 初始化```vm.$options.props```，```vm.$options.methods```，```vm.$options.data```，```vm.$options.computed```，```vm.$options.watch```
+    
+    - initProvide(vm) -- 初始化provide函数内部指向vm
+    
+    - 创建```created```生命周期
+    
+    - 如果el存在，则调用vm.$mount进行挂载
 
 <details>
 
@@ -199,7 +251,11 @@ Vue.prototype._init = function() {
 
 </details>
 
-4. stateMixin(Vue)
+- stateMixin(Vue)
+
+    - 在Vue原型上挂载$data和$props并开启监听
+    
+    - 在Vue原型上挂载$set，$delete，$watch
 
 
 <details>
@@ -215,7 +271,9 @@ Vue.prototype.$watch
 
 </details>
 
-5. eventsMixin(Vue)
+- eventsMixin(Vue)
+
+    - 在Vue原型上挂载$on、$once、$off、$emit四个函数方法
 
 <details>
 
@@ -229,7 +287,11 @@ Vue.prototype.$emit
 
 </details>
 
-6. lifecycleMixin(Vue)
+- lifecycleMixin(Vue)
+
+    - 在Vue原型上挂载_update、$forceUpdate、$destroy三个函数方法
+    
+    - $destroy内部触发```beforeDestroy```和```destroyed```生命周期
 
 <details>
 
@@ -242,7 +304,11 @@ Vue.prototype.$destroy
 
 </details>
 
-7. renderMixin(Vue)
+- renderMixin(Vue)
+
+    - 在Vue原型上挂载一系列缩写函数方法_o、_n、_s、_l、_t、_q、_i、_m、_f、_k、_b、_v、_e、_u、_g、_d、_p
+
+    - 在Vue原型上挂载$nextTick、_render两个函数方法
 
 <details>
 
@@ -286,8 +352,6 @@ function Vue (options) {
   this._init(options)
 }
 
-// console.dir(Vue)
-
 initMixin(Vue)
 stateMixin(Vue)
 eventsMixin(Vue)
@@ -295,6 +359,8 @@ lifecycleMixin(Vue)
 renderMixin(Vue)
 
 ```
+
+
 
 
 

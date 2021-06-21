@@ -1,28 +1,9 @@
 
-更新时间：{docsify-updated}
 
-# 发展历史
-
-[参考MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/HTML)
-
-# HTML简介
-
-HTML（超文本标记语言），定义了网页内容的结构和含义
-
-HTML元素通过Tag标签来将文本从文档中引出，标签由 “<” 和 ">" 中包裹的元素名组成，<b>不区分大小写</b>
-
+# meta相关信息
 
 ```html
-<!-- 文档类型，保证文档能够正常读取 -->
-<!DOCTYPE html>   
-<!-- 页面根元素，包含整个页面内容 -->
-<html>
-    <!-- 定义文档头部内容，该元素的内容对用户不可见。其中可包含页面标题，搜索关键字，页面描述，css样式表和字符编码等内容 -->
-    <head>
-        <!-- 页面标题 -->
-        <title>
-<!-- name 主要用于描述网页，对应于content（网页内容） -->
-    <!-- 指定文档使用utf-8编码字符编码 -->
+<!-- 指定文档使用utf-8编码字符编码 -->
         <meta charset="utf-8" >
     <!-- 设置页面搜索关键字，便于搜索引擎统计网站关键字 -->
         <meta name="keywords" content="搜索关键字">
@@ -103,36 +84,5 @@ HTML元素通过Tag标签来将文本从文档中引出，标签由 “<” 和 
         - min-fresh 接受响应的最小时间
         - max-stale 接受超出指定值内的响应消息 -->
         <meta http-equiv="cache-control" content="public">
-    </head>
-    <!-- 定义文档主体内容，包含页面展示时的所有内容（文本，图像，音频，视频，游戏等） -->
-    <body>
-    </body>
-</html>
 
 ```
-
-# DOM节点
-
-## 类型
-
-## 节点操作方法
-
-### 增
-
-### 删
-
-### 改/查
-
-# 浏览器方法
-
-## encodeURI
-
-## decodeURI
-
-
-
-# 参考链接
-
-[\<meta>：文档级元数据元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta)
-
-[meta属性详解](https://blog.csdn.net/ssisse/article/details/51590584)

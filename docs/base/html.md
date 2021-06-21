@@ -1,9 +1,39 @@
 
-## Html介绍
+# Html介绍
 
 HTML（HyperText Markup Language，超文本标记语言） 是一种描述语言，用来定义网页结构
 
-## Html标签
+其主要可以分为三部分理解Head网页关键信息，Body网页内容主体，Script脚本
+
+## 文档类型声明
+
+```
+<!DOCTYPE HTML>
+
+```
+
+## Head头部
+
+> 规定文档相关的配置信息，包括文档的标题，样式，脚本等
+
+```
+<head>
+
+    <meta>
+
+    <link rel="stylesheet" src="xx.css>
+    
+    <script src="xx.js"></script>
+
+</head>
+
+```
+
+[meta详解](./html/meta)
+
+## body主体
+
+### 标签
 
 具体标签详情参考[MDN-HTML元素参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)
 

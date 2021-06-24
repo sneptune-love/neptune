@@ -1,7 +1,7 @@
 
+更新时间：{docsify-updated}
 
-
-```  CSS 层叠样式表（Cascading Style Sheets） ```
+`  CSS 层叠样式表（Cascading Style Sheets） `
 
 # css基础知识
 
@@ -73,16 +73,15 @@
 | 11 | 通用兄弟选择器 | p ~ a {} |
 
 
+## 盒模型
 
+> box-sizing属性介绍
 
-
-## box-sizing属性
-
-- content-box（默认值）
+- content-box（默认值，标准盒子模型）
 
     实际宽度 = width + border + padding   
 
-- border-box
+- border-box（怪异盒模型）
 
     实际宽度 = width
     

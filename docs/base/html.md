@@ -1,4 +1,8 @@
 
+更新时间：{docsify-updated}
+
+`HTML（HyperText Markup Language，超文本标记语言）`
+
 # Html介绍
 
 HTML（HyperText Markup Language，超文本标记语言） 是一种描述语言，用来定义网页结构
@@ -61,11 +65,15 @@ button, input, label, select, textarea
 
 - async
 
-    脚本并行请求
+    脚本并行请求，对于相互
 
 - defer
 
     阻止DOMContentLoaded，直到脚本加载并解析完成
+    
+如果脚本无需等待页面解析，且无依赖独立运行，推荐使用async
+
+如果脚本需要等待页面解析，且依赖其它脚本，请使用defer，并将脚本按顺序放置html中
 
 ### Canvas和SVG的区别
 

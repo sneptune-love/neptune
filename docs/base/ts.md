@@ -1,8 +1,6 @@
 
 更新时间：{docsify-updated}
 
-# TS
-
 ## 基础类型
 
 ### 1. 布尔值boolean

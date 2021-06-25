@@ -79,5 +79,217 @@ console.log(a); // 1
 ```
 </details>
 
+## 条件判断
+
+<details open>
+
+<summary>if else</summary>
+
+```js
+if (a === 1) {
+    // do something
+} else if (a === 2) {
+    // do something
+} else {
+    // do something
+}
+
+```
+
+</details>
+
+<hr>
+<details open>
+
+<summary>switch</summary>
+
+```js
+switch(a) {
+    case 1:
+        // do something
+        break;
+    case 2:
+        // do something
+        break;
+    default:
+        // do default thing
+}
+
+```
+</details>
+
+## 循环
+
+<details open>
+<summary>for 循环</summary>
+
+```js
+for (var i = 0;  i < 10; i++) {
+    if (i === 2) {
+        continue;  // 中断后续代码执行，进入下一次循环
+    }
+    if (i === 6) {
+        break;    // 中断后续代码执行并结束循环
+    }
+}
+
+```
+</details>
+
+<hr>
+<details open>
+<summary>while 循环</summary>
+
+```js
+var a = 0;
+while(a < 10) {
+    // do somthing
+    a ++;
+}
+
+// 与上面不同的是，如果a < 0，则上面不会执行循环内的do somthing，而下面的do则会执行一次do something
+// do while 至少会执行一次do中的语句
+do {
+    // do something
+    a ++;
+} while (a < 10)
+
+```
+</details>
+
+<hr>
+<details open>
+<summary>for in 循环</summary>
+
+> 循环一个指定的变量来循环一个对象所有可枚举的属性
+
+```js
+var obj = {a: 1, b: 2}
+for (var key in obj) {
+    // do something
+    console.log(key); // a, b
+}
+
+// for in 遍历数组的结果是数组的索引
+var a = [1, 2, 3]
+a.foo = 'other';
+for (var key in a) {
+    console.log(key); // 0, 1, 2, 'foo'
+}
+
+```
+</details>
+
+<hr>
+<details open>
+<summary>for of 循环</summary>
+
+> for of语句在可迭代对象（包括Array, Map, Set, String, arguments对象等等）上创建了一个循环，对值的每一个独特属性调用一次迭代
+
+`注意：对象是不可以用for of来循环的，因为对象内部没有实现@@iterator方法`
+
+```js
+var a = [1, 2, 3];
+for (var i of a) {
+    console.log(i); // 1, 2, 3
+}
+
+```
+</details>
+
+## 函数
+
+<details open>
+<summary>arguments</summary>
+
+> 是一种对应传递给函数的参数的类数组对象
+
+* arguments是所有函数（箭头函数除外）内部都可以使用的局部变量
+
+* typeof arguments返回'object'
+
+* arguments是一种类数组，除了length和索引，不拥有数组其它的特性
+
+```js
+// 如何将类数组转换为数组
+var args = Array.prototype.slice.call(arguments);
+var args = [].slice.call(arguments);
+var args = Array.apply(null, arguments);
+
+// ES6语法
+var args = [...arguments];
+var args = Array.from(arguments);
+
+// 遍历
+var args = [];
+for (var i of arguments) {
+    args.push(i);
+}
+
+```
+</details>
+
+<hr>
+<details open>
+<summary>函数形式</summary>
+
+> 函数声明，可以写在全局作用域的任意位置，同声明变量一样，会在代码执行前进行声明
+
+```js
+function a() {}
+
+```
+
+> 匿名函数，没有名称的函数，同时也可称为函数表达式
+```js
+function () {}
+
+var a = function() {}
+
+var btn = document.getElementById('btn');
+btn.onclick = function() {}
+
+```
+</details>
+
+## 事件
+
+<details open>
+
+<summary>阻止默认事件</summary>
+
+```js
+e.preventDefault();
+```
+
+</details>
+
+<hr>
+
+<details open>
+
+<summary>事件冒泡和事件捕获</summary>
+
+> 事件冒泡：浏览器先检查子元素，然后再检查父元素
+
+> 事件捕获：浏览器先检查父元素，然后再检查子元素
+
+`注意：目前现代浏览器已将两种事件行为统一为冒泡处理`
+
+```js
+// 阻止事件冒泡
+e.stopPropagation();
+```
+
+</details>
+
+<details open>
+
+<summary>事件委托</summary>
+
+> 在父级元素上添加事件处理，点击子元素的时候冒泡到父级元素并执行该事件处理
+
+</details>
+
 
 

@@ -199,8 +199,10 @@ for (var i of a) {
 
 ## 函数
 
+<hr>
+
 <details open>
-<summary>arguments</summary>
+<summary>参数：arguments</summary>
 
 > 是一种对应传递给函数的参数的类数组对象
 
@@ -233,26 +235,41 @@ for (var i of arguments) {
 <details open>
 <summary>函数形式</summary>
 
-> 函数声明，可以写在全局作用域的任意位置，同声明变量一样，会在代码执行前进行声明
+> 声明式函数，可以写在全局作用域的任意位置，同声明变量一样，会在代码执行前进行声明
 
 ```js
 function a() {}
 
+// 函数生成器
+function* a() {}
+
 ```
 
-> 匿名函数，没有名称的函数，同时也可称为函数表达式
+> 函数表达式，当其没有函数名称时又称为匿名函数
 ```js
-function () {}
 
+// 匿名函数
 var a = function() {}
+
+var a = function() b{}
 
 var btn = document.getElementById('btn');
 btn.onclick = function() {}
 
 ```
+
+> 箭头函数
+
+```js
+() => {}
+
+```
+
 </details>
 
 ## 事件
+
+<hr>
 
 <details open>
 
@@ -282,14 +299,59 @@ e.stopPropagation();
 ```
 
 </details>
-
+<hr>
 <details open>
 
 <summary>事件委托</summary>
 
 > 在父级元素上添加事件处理，点击子元素的时候冒泡到父级元素并执行该事件处理
 
+```js
+
+var parent = document.getElementById('parent');
+parent.onclick = function(e) {
+    // e.target代表点击触发的对应子元素
+    // do something for children
+}
+
+```
+
 </details>
 
+## 对象
+<hr>
+<details open>
+<summary>创建对象</summary>
+
+```js
+var obj = {};
+
+var obj = new Object();
+
+// 创建一个原型为空的对象
+var obj = Object.create(null);
+
+```
+</details>
+
+<hr>
+<details open>
+<summary>原型</summary>
+
+> 每个对象都有原型，以原型为模板，从原型继承属性和方法。原型对象也可能有原型，并从中继承属性和方法，一层一层，以此类推。这种关系就称为原型链
+
+默认情况下，所有函数的原型对象`__proto__`就是window.Object.prototype
+
+```js
+
+// a的原型是__proto__
+var a = {};
+
+// b的原型是prototype也就是 construstor + __proto__
+var b = function() {}
+
+```
+
+</details>
 
 

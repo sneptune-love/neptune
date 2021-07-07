@@ -18,7 +18,7 @@
 * Nginx
 
 * 网络
-    * [Http和Https](/docs/network/https)
+    * [Http和Https](/docs/network/http)
 
 * 数据库
     * [mysql](/docs/database/mysql)

@@ -197,6 +197,59 @@ for (var i of a) {
 ```
 </details>
 
+
+## 事件
+
+<hr>
+
+<details open>
+
+<summary>阻止默认事件</summary>
+
+```js
+e.preventDefault();
+```
+
+</details>
+
+<hr>
+
+<details open>
+
+<summary>事件冒泡和事件捕获</summary>
+
+> 事件冒泡：浏览器先检查子元素，然后再检查父元素
+
+> 事件捕获：浏览器先检查父元素，然后再检查子元素
+
+`注意：目前现代浏览器已将两种事件行为统一为冒泡处理`
+
+```js
+// 阻止事件冒泡
+e.stopPropagation();
+```
+
+</details>
+<hr>
+<details open>
+
+<summary>事件委托</summary>
+
+> 在父级元素上添加事件处理，点击子元素的时候冒泡到父级元素并执行该事件处理
+
+```js
+
+var parent = document.getElementById('parent');
+parent.onclick = function(e) {
+    // e.target代表点击触发的对应子元素
+    // do something for children
+}
+
+```
+
+</details>
+<hr>
+
 ## 函数
 
 <hr>
@@ -267,56 +320,6 @@ btn.onclick = function() {}
 
 </details>
 
-## 事件
-
-<hr>
-
-<details open>
-
-<summary>阻止默认事件</summary>
-
-```js
-e.preventDefault();
-```
-
-</details>
-
-<hr>
-
-<details open>
-
-<summary>事件冒泡和事件捕获</summary>
-
-> 事件冒泡：浏览器先检查子元素，然后再检查父元素
-
-> 事件捕获：浏览器先检查父元素，然后再检查子元素
-
-`注意：目前现代浏览器已将两种事件行为统一为冒泡处理`
-
-```js
-// 阻止事件冒泡
-e.stopPropagation();
-```
-
-</details>
-<hr>
-<details open>
-
-<summary>事件委托</summary>
-
-> 在父级元素上添加事件处理，点击子元素的时候冒泡到父级元素并执行该事件处理
-
-```js
-
-var parent = document.getElementById('parent');
-parent.onclick = function(e) {
-    // e.target代表点击触发的对应子元素
-    // do something for children
-}
-
-```
-
-</details>
 
 ## 对象
 <hr>
@@ -336,7 +339,7 @@ var obj = Object.create(null);
 
 <hr>
 <details open>
-<summary>原型</summary>
+<summary>原型和原型链</summary>
 
 > 每个对象都有原型，以原型为模板，从原型继承属性和方法。原型对象也可能有原型，并从中继承属性和方法，一层一层，以此类推。这种关系就称为原型链
 
@@ -351,7 +354,200 @@ var a = {};
 var b = function() {}
 
 ```
-
 </details>
+
+<hr>
+
+## ECMAScript 2015（ES6）
+
+> 浏览器支持情况，chrome >= 58、safari >= 10、Firefox >= 54
+
+[w3school参考](https://www.w3schools.com/js/js_es6.asp#mark_forof)
+
+
+- let
+
+- const
+
+- 箭头函数
+
+- for/of
+
+- Map对象
+
+- Set对象
+
+- Class类
+
+- Promise
+
+- Symbol
+
+- 函数参数赋予默认值
+
+- 函数参数使用扩展运算符
+
+- String.includes()
+
+- String.startsWith()
+
+- String.endsWith()
+
+- Array.from()
+
+- Array.keys()
+
+- Array.find()
+
+- Array.findIndex()
+
+- New Math Methods
+
+    - Math.trunc()
+    
+    - Math.sign()
+    
+    - Math.cbrt()
+    
+    - Math.log2()
+    
+    - Math.log10()
+
+- Number新增属性
+
+    - Number.EPSILON
+    
+    该值为：Number大于1的所能展示的最小浮点数减去1，接近于2<sup>-52</sup>
+    
+    - Number.MIN_SAFE_INTEGER
+    
+    - Number.MAX_SAFE_INTEGER
+    
+- Number新增方法
+
+    - Number.isInteger()
+    
+    - Number.isSafeInteger()
+    
+- 新增全局方法
+
+    - isFinite()
+    
+    - isNaN()
+
+
+## ECMAScript 2016
+
+- 求幂运算符 `**`
+
+
+```js
+let x = 5;
+
+let z = x ** 2; // result is 25
+
+let y = Math.pow(x, 2); // result is 25
+
+```
+
+- 取幂赋值分配符
+
+
+```js
+let x = 5;
+
+x **= 2; // x is 25;
+
+```
+
+- Array.includes()
+
+
+```js
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.include("Mango") // result is true
+
+```
+
+## ECMAScript 2017
+
+- String Padding（字符串补位）
+
+
+```js
+let x = '4';
+
+x = x.padStart(4, 0); // x is '0004'
+
+let y = '4'
+
+y = y.padEnd(4, 0); // y is '4000'
+
+```
+
+- Object.entries()
+
+
+```js
+const person = {
+    name: 'sneptune',
+    age: '28',
+    sex: 'man'
+}
+
+Object.entries(person); // [["name", "sneptune"], ["age", "28"], ["sex", "man"]]
+
+```
+
+- Object.values()
+
+```js
+const person = {
+    name: 'sneptune',
+    age: '28',
+    sex: 'man'
+}
+
+Object.values(person); // ["sneptune", "28", "man"]
+```
+
+- async function
+
+```js
+async function demo() {
+    let myPromise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve("setTimeout done")
+        }, 300)
+    })
+    let x = await myPromise;
+    console.log(x);
+}
+
+demo(); // x is "setTimeout done"
+
+```
+
+## ECMAScript 2018
+
+- 异步迭代for/of 可以使用await关键字
+
+- Promise.finally()
+
+- 对象扩展运算
+
+```js
+let {x, y, ...z} = {1, 2, 3, 4, 5}
+
+x; // 1
+
+y; // 2
+
+z; // {3, 4, 5}
+
+```
+
+- 新增4种正则匹配规则
 
 

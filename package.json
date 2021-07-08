@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/powercandy/neptune.cn.git"
+    "url": "git+https://github.com/sneptune-love/neptune.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/powercandy/neptune.cn/issues"
+    "url": "https://github.com/sneptune-love/neptune/issues"
   },
-  "homepage": "https://github.com/powercandy/neptune.cn#readme",
+  "homepage": "https://github.com/sneptune-love/neptune#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",

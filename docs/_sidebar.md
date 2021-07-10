@@ -14,6 +14,8 @@
     * [Vite](/docs/build/Vite.md)
 
 * Node
+    * [自带](/docs/node/index)
+    * [npm](/docs/node/npm)
 
 * Nginx
 
@@ -27,3 +29,6 @@
 * 平台
     * [微信](/docs/platform/Wx)
     * [企业微信](/docs/platform/qyWx)
+    
+* 调试
+    * [调试工具](/docs/build/debug)

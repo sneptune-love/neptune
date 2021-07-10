@@ -1,20 +1,20 @@
 
 更新时间：{docsify-updated}
 
-<a href="https://github.com/powercandy" style="text-decoration: none; margin-right: 4px;" target="_blank_">
-  <img alt="GitHub followers" src="https://img.shields.io/github/followers/powercandy?style=social">
+<a href="https://github.com/sneptune-love" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub followers" src="https://img.shields.io/github/followers/sneptune-love?style=social">
 </a>
 
-<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
-  <img alt="GitHub forks" src="https://img.shields.io/github/forks/powercandy/neptune?style=social">
+<a href="https://github.com/sneptune-love/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/sneptune-love/neptune?style=social">
 </a>
 
-<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/powercandy/neptune?style=social">
+<a href="https://github.com/sneptune-love/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/sneptune-love/neptune?style=social">
 </a>
 
-<a href="https://github.com/powercandy/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
-  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/powercandy/neptune?style=social">
+<a href="https://github.com/sneptune-love/neptune" style="text-decoration: none; margin-right: 4px;" target="_blank_">
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/sneptune-love/neptune?style=social">
 </a>
 
 ----------

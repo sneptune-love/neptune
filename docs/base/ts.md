@@ -399,19 +399,94 @@ a.showName(); // 'test'
 
 ```
 
+> 抽象类 abstract
+
+-  抽象类无法被实例化，子类可以被实例化
+
+- 抽象类方法，子类必须实现
+
+
+```js
+// 定义抽象类，该类无法被实例化
+abstract class parent {
+    showName() {
+        console.log('parent');
+    }
+    // 定义抽象类方法，派生类中必须实现该方法
+    abstract showAge(): void;
+}
+
+class children extends parent {
+    showAge() {
+        console.log('children abstract method')
+    }
+    showSex() {
+        console.log('c2 sex is 女');
+    }
+}
+
+let p = new parent();   // error，不能创建一个抽象类的实例
+let c1 = new children();
+c1.showAge(); // 'children abstract method'
+c1.showName(); // 'parent'
+c1.showSex(); // 'c2 sex is 女'
+
+class childrenTwo extends parent {
+    showSex() {
+        console.log('c2 sex is 女');
+    }
+}
+
+let c2 = new children(); // error, 派生类中未实现定义的抽象类方法
+
+```
+
+
 ## 函数
 
+> 定义函数参数和返回值类型
+
+```js
+
+function addFn(a: number, b: number): number {
+    return a + b;
+}
+
+// b参数可选
+function addFn(a: number, b?: number): number {
+    return a + (b || 0);
+}
+
+// a参数赋予默认值
+function addFn(a = 1, b: number): number {
+    return a + b;
+}
+
+
+```
 
 
 ## 泛型
 
+```js
+function demo<T>(arg: T): T {
+    console.log(arg);
+    return arg;
+}
+demo<string>('demo'); // demo，定义T类型
+demo('demo'); // demo，编译器通过传入参数定义T类型
+demo(1); // 1
 
-
-## 枚举
-
-
+```
 
 ## 类型推论
+
+```js
+let x = 1;  // 类型推论会认为x是number类型
+
+x = '1'; // error, 此时x已经被认定为number类型，所以赋值字符串会报错
+
+```
 
 
 

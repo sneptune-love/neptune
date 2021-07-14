@@ -101,6 +101,30 @@
 
 ### JS是如何运行在浏览器上的？
 
+
+### 事件轮询（Event Loop）
+
+- 宏任务
+
+`setTimeout、setInterval、setImmediate、XMLHttpRequest，I/O、UI rendering等`
+
+- 微任务
+
+`promise.then、process.nextTick(node环境)、Object.observe，MutationObserver等`
+
+> 执行顺序
+
+- 先执行主线程
+- 若果遇到宏任务放入宏任务队列
+- 如果遇到微任务放入微任务队列
+- 主线程执行完毕
+- 执行微任务队列
+- 微任务队列执行完毕
+- 执行宏任务队列中先放入的宏任务，执行一次
+- 宏任务执行完毕
+- 执行微任务队列
+- ...一次循环
+
 ### 深拷贝和浅拷贝的区别？
 
 ### 节流和防抖的作用？

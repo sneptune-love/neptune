@@ -199,7 +199,20 @@ var cloneObj = JSON.parse(JSON.stringify(obj));
 
 ### 请求方式有哪些？
 
+- Get
+
+- Post
+
+- Options
+
+- Delete
+
 ### http缓存
+
+- 浏览器缓存
+
+- 服务端缓存
+
 
 ### 常用状态码
 

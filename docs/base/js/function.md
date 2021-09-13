@@ -1,6 +1,64 @@
 
+# 收藏JS方法
 
-# 防抖函数（debounce）
+## URL参数获取（getQuery）
+
+```js
+
+function getQuery(key) {
+  if (location.href.indexOf('?') == -1) {
+    return '';
+  }
+  var search = location.href.split('?')[1];
+  var arr = search.split('&');
+  var res = '';
+  for (var i = 0; i < arr.length; i++) {
+    var valArr = arr[i].split('=');
+    if (valArr[0] == key) {
+      res = valArr[1];
+      break;
+    }
+  }
+  return decodeURIComponent(res);
+}
+
+```
+
+## 参数拼接（queryConcatString）
+
+```js
+function queryConcatString(obj) {
+  var str = '';
+  if (JSON.stringify(obj) == '{}') return str;
+  for (var key in obj) {
+    str += (key + '=' + obj[key] + '&')
+  }
+  str = str.slice(0, str.length - 1)
+  return str;
+}
+
+```
+
+## 深度克隆（deepClone）
+
+> 下文方法只针对多层对象结构，递归处理
+
+```js
+function deepClone(obj) {
+  var newObj = {};
+  for (var key in obj) {
+    if (Object.prototype.toString.call(obj[key]) === '[object Object]') {
+      newObj[key] = deepClone(obj[key])
+    } else {
+      newObj[key] = obj[key]
+    }
+  }
+  return newObj;
+}
+
+```
+
+## 防抖函数（debounce）
 
 > 触发高频事件后n秒内函数只会执行一次，如果n秒内高频事件再次被触发，则重新计算时间
 
@@ -34,7 +92,7 @@ window.onscroll = debounce(function() {
 
 ```
 
-# 节流函数(throttle)
+## 节流函数（throttle）
 
 > 高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率
 
@@ -53,7 +111,6 @@ function throttle(fn, wait) {
         }, wait)
     }
 }
-
 
 ```
 

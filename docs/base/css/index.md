@@ -58,3 +58,20 @@
 | 4 | 列表属性 | list-style |
 | 5 | 光标属性 | cursor |
 | 6 | 元素可见性 | visibility |
+
+## 自定义属性 Custom properties
+
+```css
+:root {
+  --first-color: #fff;
+  --second-color: #ddd;
+}
+
+.demo {
+  color: var(--first-color);
+}
+.demo2 {
+  color: var(--second-color);
+}
+
+```

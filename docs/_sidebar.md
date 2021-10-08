@@ -4,6 +4,8 @@
     * [CSS](/docs/base/css.md)
     * [JS](/docs/base/js.md)
     * [TS](/docs/base/ts.md)
+    * [Canvas](/docs/base/canvas)
+    * [Audio](/docs/base/audio)
     
 * 框架
     * [Vue](/docs/frame/vue/index.md)

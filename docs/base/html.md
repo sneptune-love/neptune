@@ -7,11 +7,25 @@
 
 HTML（HyperText Markup Language，超文本标记语言） 是一种描述语言，用来定义网页结构
 
-其主要可以分为四部分：
-- 文档类型声明
-- Head网页关键信息
-- Body网页内容主体
-- Script脚本
+网页文档解析顺序`自上而下`
+
+网页结构一般可以由以下部分组成：
+
+1、 文档类型声明（\<!DOCTYPE HTML>）
+
+2、 文档头部内容(\<head>...\</head>) ，包含以下内容：
+
+  - \<title>网页标题\</title>
+
+  - \<meta> 元信息，主要用于对网站的介绍，其内容丰富，详情查看请点击 [meta详解](./html/meta)
+  
+  - \<link> 资源引用，对网页样式表和网站图标资源的引入
+  
+  - \<script> 脚本引用，除特殊脚本外，不建议将脚本引入放置该位置，会阻塞下方文档加载
+  
+3、 文档主体内容(\<body>...\</body>)，呈现在网页上的各种展示内容，其末尾部分一般会引入脚本文件
+
+`script标签正常情况都是放置于文档主题内容之后，特殊脚本可以放置与head中`
 
 ## HTML发展史
 
@@ -76,7 +90,8 @@ acronym, applet, basefont, big, center, dir, font, frame, frameset, noframes, st
 
 具体标签详情参考[MDN-HTML元素参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)
 
-标签拥有一套全局属性（去除废弃26个），大部分全局属性都能适用
+标签拥有一套[全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes)（去除废弃26个），大部分全局属性都能适用
+
 
 
 ## 块级元素汇总

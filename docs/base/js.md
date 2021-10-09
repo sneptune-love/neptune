@@ -19,6 +19,10 @@
 
 [错误列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors)
 
+## JS事件大全
+
+[传送门](https://developer.mozilla.org/zh-CN/docs/Web/Events)
+
 
 ## 变量声明和变量提升
 

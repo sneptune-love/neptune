@@ -57,6 +57,10 @@
     
   不加这个属性时，抓取资源不会走CORS请求(即，不会发送 Origin: HTTP 头)，保证其在 \<canvas> 元素中使用时不会被污染。如果指定非法值，会被当作指定了枚举关键字 anonymous 一样使用。 查看 CORS 设置属性 (en-US) 获取更多信息。
   
+- volume
+
+  表示音频的音量。值从0.0（静音）到1.0（最大音量）。
+  
 ### 音轨增删
 
 你可以监控媒体元素中的音频轨道，当音轨被添加或删除时，你可以通过监听相关事件来侦测到。具体来说，通过监听 AudioTrackList (en-US) 对象的 addtrack 事件（即 HTMLMediaElement.audioTracks 对象），你可以及时对音轨的增加做出响应。
@@ -114,7 +118,7 @@ WEBVTT
 
 ## audio
 
-audio标签不支持width, height, poster，其它的属性都支持
+audio标签不支持width, height, poster，Video其它的属性都支持
 
 ```js
 const mediaElem = document.getElementById("my-media-element");
@@ -123,4 +127,103 @@ const mediaElem = document.getElementById("my-media-element");
 - mediaElem.load()
 
   重新加载媒体
+  
+### audio常用方法记录
+
+```js
+var url = 'xxx.mp3';
+// 返回一个HTMLAudioElement，其preload属性被设置为auto，浏览器
+var audioObj = new Audio(url)
+// 当前播放时间
+audioObj.currentTime;
+// （只读）音频时长
+audioObj.duration;
+// （只读）音频是播放完毕状态
+audioObj.ended;
+// 音频是循环播放状态，true-循环播放，false-不循环播放
+audioObj.loop;
+// 音频静音状态，true-静音，false-不静音
+audioObj.muted;
+// （只读）音频暂停状态， true-暂停，false-播放
+audioObj.paused;
+// 音频音量 - 值从0.0（静音）到1.0（最大音量）
+audioObj.volume;
+
+// 播放
+audioObj.play(); //
+// 暂停
+audioObj.pause();
+// 重新加载
+audioObj.load();
+
+// 音频未完全加载时触发
+audioObj.addEventListener("abort", function() {
+  
+})
+// 音频可以播放的时候触发，但是未加载完所有数据
+audioObj.addEventListener("canplay", function() {
+  
+})
+// 音频可以播放的时候触发，已加载完所有数据
+audioObj.addEventListener("canplaythrough", function() {
+  
+})
+// 当音频时长属性更新时触发
+audioObj.addEventListener("durationchange", function() {
+  
+})
+// 音频播放结束时触发
+audioObj.addEventListener("ended", function() {
+  
+})
+// 音频加载失败时触发
+audioObj.addEventListener("error", function() {
+  
+})
+// 当音频第一帧加载完成后触发
+audioObj.addEventListener("loadeddata", function() {
+  
+})
+// 加载元数据的时候触发
+audioObj.addEventListener("loadedmetadata", function() {
+  
+})
+// 浏览器开始加载资源的时候触发
+audioObj.addEventListener("loadstart", function() {
+  
+})
+// 音频状态由播放状态变为暂停状态时触发
+audioObj.addEventListener("pause", function() {
+  
+})
+// 音频状态由暂停状态改为播放状态时触发
+audioObj.addEventListener("play", function() {
+  
+})
+// 由于缺乏数据而暂停或延迟后，当回放准备开始时触发
+audioObj.addEventListener("playing", function() {
+  
+})
+// 在浏览器周期性的加载资源时触发
+audioObj.addEventListener("process", function() {
+  
+})
+// 在播放速率发生改变时触发
+audioObj.addEventListener('ratechange', function() {
+  
+})
+// 播放当前时间改变时触发
+audioObj.addEventListener('timeUpdate', function() {
+  
+})
+// 音量发生改变时触发
+audioObj.addEventListener('volumechange', function() {
+  
+})
+// 缓冲数据时触发
+audioObj.addEventListener('waiting', function() {
+  
+})
+```
+
 

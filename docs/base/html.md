@@ -93,19 +93,7 @@ acronym, applet, basefont, big, center, dir, font, frame, frameset, noframes, st
 标签拥有一套[全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes)（去除废弃26个），大部分全局属性都能适用
 
 
-
-## 块级元素汇总
-
-常用标签：address, article, aside, audio, blockquote, canvas, dd, div, dl, footer, form, h1-h6, header, hr, li, ol, p, pre, section, table, ul, video
-
-不常用标签：fieldset, figure, figcaption, hgroup, output, tfoot
-
-
-## 行内元素汇总
-
-b, big, i, small, tt, abbr, cite, code, dfn, em, kbd, strong, var, samp, a, bdo, br, img, q, script, span, button, input, label, select, textarea
-
-### script标签属性解析
+## script标签属性解析
 
 `async`
 
@@ -119,19 +107,6 @@ b, big, i, small, tt, abbr, cite, code, dfn, em, kbd, strong, var, samp, a, bdo,
 
 如果脚本需要等待页面解析，且依赖其它脚本，请使用defer，并将脚本按顺序放置html中
 
-### Canvas和SVG的区别
-
-| Canvas | SVG |
-| --| -- |
-| 较新，Apple私有技术发展而来 | 历史悠久，2003年成为W3C标准 |
-| 像素，只能脚本驱动，动态渲染和大数据量绘制 | 矢量，XML，CSS，元素操作；适合静态图标展示，高保真文档查看和打印的应用场景 |
-| 功能简单，2D绘图 | 功能丰富，各种图形、滤镜、动画等 |
-| 主流浏览器，IE9+ | 主流浏览器，IE9+，其它SVG阅读器 |
-
-
-## HTML5新特性
-
-> HTML5新特性参考[HTML5](https://developer.mozilla.org/zh-CN/docs/orphaned/Web/Guide/HTML/HTML5)
 
 
 

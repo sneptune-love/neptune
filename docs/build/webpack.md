@@ -2,9 +2,25 @@
 更新时间：{docsify-updated}
 
 
+##  webpack介绍
+
+webpack是一个构建工具，会根据入口搭建一个依赖图，然后将项目中关联的资源打包成若干个bundle，输出到指定的目录，并将其关联关系整理好，其流程如下：
+
+1、找到入口文件
+
+2、根据设定的文件解析规则将文件进行解析处理
+
+3、如果有扩展插件
+
+## webpack安装
+
+```js
+npm install webpack webpack-cli --save-dev
+```
+
 ## 配置文件解析
 
-### mode
+### mode - 打包模式
 
 开发模式 | 生产模式
 
@@ -14,17 +30,40 @@ mode: 'development'
 
 ```
 
-### entry
+### devtool - 开发工具
+
+```js
+devtool: false,
+devtool: 'inline-source-map',
+
+```
+
+### devServer - 开发服务
+
+本地开发模式
+
+```js
+devServer: {
+  static: './dist',
+  host: '0.0.0.0',
+  port: 7000
+},
+
+```
+
+### entry - 入口
 
 String类型 | Array类型，
   
 ```js
+// 单入口
 entry: './a.js',
+// 多入口
 entry: ['./a.js', './b.js']
 
 ```
 
-### output
+### output - 输出
 
 String类型 | Function类型
   
@@ -41,28 +80,21 @@ output: {
 }
 ```
 
-### devtool
 
-```js
-devtool: false,
-devtool: 'inline-source-map',
 
-```
 
-### devServer
 
-本地开发模式
+### module - 模块
 
-```js
-devServer: {
-  static: './dist',
-  host: '0.0.0.0',
-  port: 7000
-},
+- rules - 规则
+  
+- loader - 文件解析
 
-```
-
-### module
+- parser - 配置所有解析器的选项
+  
+- noParse - 防止 webpack 解析那些任何与给定正则表达式相匹配的文件
+  
+- unsafeCache - 缓存模块请求的解析
 
 ```js
 // 模块配置
@@ -100,14 +132,18 @@ module: {
 
 ```
 
-### plugins
+### resolve - 配置模块如何解析
+
+### plugins - 扩展插件
 
 ```js
 plugins: [
+  // css文件抽离和压缩
   new MiniCssExtractPlugin({
     filename: "[name].css",
     chunkFilename: "[id].css",
   }),
+  // 配置html文件
   new HtmlWebpackPlugin({
     title: '测试demo'
   })
@@ -115,6 +151,5 @@ plugins: [
 
 ```
 
-### optimization
+### optimization - 配置优化
 
-配置优化

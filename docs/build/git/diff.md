@@ -1,5 +1,5 @@
 
-更新时间：{docsify-updated}
+
 
 # 如何实现一个 Git Diff 解析器
 

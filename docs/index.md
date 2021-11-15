@@ -1,5 +1,4 @@
 
-更新时间：{docsify-updated}
 
 <a href="https://github.com/sneptune-love" style="text-decoration: none; margin-right: 4px;" target="_blank_">
   <img alt="GitHub followers" src="https://img.shields.io/github/followers/sneptune-love?style=social">

@@ -2,7 +2,7 @@
 # git指令
 
 
-更新时间：{docsify-updated}
+
 
 ## git基本命令介绍：
 

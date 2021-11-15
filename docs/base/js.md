@@ -1,7 +1,10 @@
 
-更新时间：{docsify-updated}
+
 
 `JS（Javascript）`
+
+
+[收藏函数](/docs/base/js/collect)
 
 
 ## 浏览器支持类型
@@ -555,8 +558,5 @@ z; // {3, 4, 5}
 - 新增4种正则匹配规则
 
 
-## 收藏函数
-
-[跳转](/docs/base/js/function)
 
 

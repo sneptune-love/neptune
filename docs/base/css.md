@@ -1,7 +1,9 @@
 
-更新时间：{docsify-updated}
+
 
 `  CSS 层叠样式表（Cascading Style Sheets） `
+
+[收藏样式](./css/collect)
 
 ## 书写规范
 

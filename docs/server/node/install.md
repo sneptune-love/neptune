@@ -1,5 +1,5 @@
 
-更新时间：{docsify-updated}
+
 
 # Node版本管理工具 n
 

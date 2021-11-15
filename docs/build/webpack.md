@@ -1,5 +1,5 @@
 
-更新时间：{docsify-updated}
+
 
 
 ##  webpack介绍
@@ -20,22 +20,55 @@ npm install webpack webpack-cli --save-dev
 
 ## 配置文件解析
 
-### mode - 打包模式
-
-开发模式 | 生产模式
+### mode - 配置优化模式
 
 ```js
-mode: 'production',
+// 不使用任何默认优化选项
+mode: 'none',
+// 会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 development. 为模块和 chunk 启用有效的名
 mode: 'development'
+// 会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 production。为模块和 chunk 启用确定性的混淆名称
+mode: 'production'
 
 ```
 
-### devtool - 开发工具
+### devtool - sourceMap文件生成配置
+
+[详细配置](https://webpack.docschina.org/configuration/devtool/#devtool)
 
 ```js
+// string = 'eval' false
+// eval -> 每个被打包的bundle.js会被eval包裹，同时会跟随sourceUrl，指向原文件
+// source-map -> 生成一个.map文件
+// cheap -> 低消耗，不会包含列信息
+// module -> 包含loader的sourceMap
+// inline -> 生成一个base64的文件流插入在bundle.js中
 devtool: false,
+devtool: 'eval',
+devtool: 'eval-cheap-source-map',
+devtool: 'eval-cheap-module-source-map',
+devtool: 'eval-source-map',
+devtool: 'cheap-source-map',
+devtool: 'cheap-module-source-map',
+devtool: 'source-map',
+devtool: 'inline-cheap-source-map',
+devtool: 'inline-cheap-module-source-map',
 devtool: 'inline-source-map',
-
+devtool: 'eval-nosources-cheap-source-map',
+devtool: 'eval-nosources-cheap-module-source-map',
+devtool: 'eval-nosources-source-map',
+devtool: 'inline-nosources-cheap-source-map',
+devtool: 'inline-nosources-cheap-module-source-map',
+devtool: 'inline-nosources-source-map',
+devtool: 'nosources-cheap-source-map',
+devtool: 'nosources-cheap-module-source-map',
+devtool: 'nosources-source-map',
+devtool: 'hidden-nosources-cheap-source-map',
+devtool: 'hidden-nosources-cheap-module-source-map',
+devtool: 'hidden-nosources-source-map',
+devtool: 'hidden-cheap-source-map',
+devtool: 'hidden-cheap-module-source-map',
+devtool: 'hidden-source-map',
 ```
 
 ### devServer - 开发服务
@@ -109,13 +142,16 @@ devServer: {
   magicHtml: true, // boolean = true
   // 提供服务器内部在所有其他中间件之后执行 自定义中间件的能力
   onAfterSetupMiddleware: function() { // function (devServer)
-    
+    // ...
   },
   // 提供在服务器内部执行所有其他中间件之前执行自定义中间件的能力
   onBeforeSetupMiddleware: function() { // function (devServer)
-    
-  }
-  
+    // ...
+  },
+  // 监听文件变化
+  watchFiles: [''], // string [string] object [object]
+  // 该配置项允许我们选择当前的 web-socket 服务器或者提供自定义的 web-socket 服务器实现。当前默认模式为'ws'
+  webSocketServer: 'ws', // false | 'sockjs' | 'ws' string function object
 },
 
 ```

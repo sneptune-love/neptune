@@ -4,7 +4,11 @@
 `JS（Javascript）`
 
 
-[收藏函数](/docs/base/js/collect)
+:fire: [收藏函数](/docs/base/js/collect)
+
+:fire: [js小技巧](./js/technique)
+
+
 
 
 ## 浏览器支持类型

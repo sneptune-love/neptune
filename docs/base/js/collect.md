@@ -115,5 +115,80 @@ function throttle(fn, wait) {
 
 ```
 
+### 函数只执行一次（once）
+
+<details open>
+<summary>实现方法</summary>
+
+```js
+function once (fn) {
+    let called = false
+    return function () {
+        if (!called) {
+            called = true
+            fn.apply(this, arguments)
+        }
+    }
+}
+
+function test() {
+    console.log(1);
+}
+function test2() {
+    console.log(2);
+}
+
+var a = once(test);
+var c = once(test2);
+
+a(); // 1
+a(); // 无输出
+c(); // 2
+c(); // 无输出  
+
+```
+</details>
+
+### 删除数组中某一项（removeArrayItem）
+
+<details open>
+<summary>实现方法</summary>
+
+```js
+function removeArrayItem(array, item) {
+    if (array.length > 0) {
+        var index = array.indexOf(item);
+        if (index > -1) {
+            return array.splice(index, 1)
+        }
+    }
+}
+```
+</details>
+
+### 重复某个字符串N次（repeatStr）
+
+> 时间复杂度O(logN)
+
+<details open>
+<summary>实现方法</summary>
+
+```js
+function repeat (str, n) {
+  let result = ''
+  if (n > 0) {
+    while (true) { // eslint-disable-line
+      if (n & 1) result += str
+      n >>>= 1
+      if (n <= 0) break
+      str += str
+    }
+  }
+  return result
+}
+
+```
+</details>
+
 
 

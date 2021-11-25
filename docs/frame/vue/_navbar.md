@@ -6,6 +6,7 @@
 * [Vue Api](vue)
 
 * [Vue源码解析](vueCode)
+  * [Vue2.x版本](vue2.x.md)
 
 * [Vue-Router](vue-router)
 

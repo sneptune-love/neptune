@@ -1,26 +1,29 @@
 
 * 基础知识   
-    * [HTML](/docs/base/html.md)
-    * [CSS](/docs/base/css.md)
-    * [JS](/docs/base/js.md)
-    * [TS](/docs/base/ts.md)
+    * [HTML](/docs/base/html)
+    * [CSS](/docs/base/css)
+    * [JS](/docs/base/js)
+    * [TS](/docs/base/ts)
     * [Canvas](/docs/base/canvas)
     * [Audio](/docs/base/audio)
     
 * 框架
-    * [Vue](/docs/frame/vue/index.md)
-    * [React](/docs/frame/react.md)
+    * [模块化](/docs/frame/module)
+    * [Vue](/docs/frame/vue/index)
+    * [React](/docs/frame/react)
 
 
 * 构建
-    * [Webpack](/docs/build/Webpack.md)
-    * [Vite](/docs/build/Vite.md)
+    * [Webpack](/docs/build/Webpack)
+    * [Vite](/docs/build/Vite)
 
 * Node
     * [自带](/docs/node/index)
     * [npm](/docs/node/npm)
 
 * Nginx
+
+  * [使用技巧](/docs/server/nginx/index)
 
 * 网络
     * [Http和Https](/docs/network/http)

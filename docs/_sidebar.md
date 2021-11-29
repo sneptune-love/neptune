@@ -20,6 +20,7 @@
 * Node
     * [自带](/docs/node/index)
     * [npm](/docs/node/npm)
+    * [git](/docs/git/index)
 
 * Nginx
 

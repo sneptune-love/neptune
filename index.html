@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="./static/css/dark.css" title="dark" data-type="theme" disabled>
   <link rel="stylesheet" href="./static/css/pure.css" title="pure" data-type="theme" disabled>
   <link rel="stylesheet" href="./static/css/dolphin.css" title="dolphin" data-type="theme" disabled>
-  
 </head>
 
 <body>
@@ -25,21 +24,25 @@
     window.$docsify = {
       // 挂载元素
       el: '#app',
+      // 文档名称
       name: 'neptune',
       // 又上角github链接
       repo: 'https://github.com/powercandy/neptune.cn',
       // 加载自定义导航栏, 设置为 true 后会加载 _navbar.md 文件
       loadNavbar: true,
+      // 加载_sidebar.md文件
       loadSidebar: true,
+      // 侧边栏标题最大限制数量
       subMaxLevel: 4,
       coverpage: true,
       // 首页只展示封面
       onlyCover: true,
       // 自动合并头部
-    //   autoHeader: true,
+      // autoHeader: true,
       // 文档加载的根路径
-    //   basePath: '/docs/',
+      // basePath: '/docs/',
       logo: './static/images/mine.jpg',
+      // 开启相对路径
       relativePath: true,
       name: 'docsify',
       // 首页文件加载路径
@@ -61,6 +64,7 @@
       },
       // 错误地址页面配置
       notFoundPage: true,
+      // 复制配置
       copyCode: {
         buttonText : 'copy',
         errorText  : 'Error',

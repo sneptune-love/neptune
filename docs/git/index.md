@@ -16,6 +16,7 @@
 `语法：git clone [仓库地址] [本地目录名称]`
 
 ```bash
+// vueGit目录名称可以省略，默认会创建vue目录
 git clone https://github.com/vuejs/vue.git vueGit
 
 ```
@@ -307,7 +308,7 @@ git show <tagname>
   
 # 示例：针对指定的仓库存储指定的用户信息
 [credential "https://example.com"]
-	username = foo
+  username = foo
   
 # 别名配置
 [alias]

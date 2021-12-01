@@ -16,7 +16,7 @@ git读取配置文件有三个层级（针对Mac）：
 
   1. 全局配置 /etc/gitconifg  
   
-  2. 用户配置 ~/.gitconfig 
+  2. 用户配置 ~/.gitconfig或者~/.config/git/config
   
   3. 项目配置 ~/projectA/.git/config
   

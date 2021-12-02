@@ -415,7 +415,7 @@ Windows路径位置
 
 查看所有配置文件命令：`git config --list --show-origin`
 
-```
+```bash
 [core]
   # 配置忽略文件
   excludesfile = /Users/hujiang/.gitignore_global
@@ -501,7 +501,7 @@ git config --global alias.co checkout
 
 `.git/config文件`
 
-```config
+```bash
 [core]
   repositoryformatversion = 0
   filemode = true

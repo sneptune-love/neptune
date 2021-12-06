@@ -1,6 +1,6 @@
 
 
-[git中文文档](https:#git-scm.com/book/zh/v2)
+[git中文文档](https://git-scm.com/book/zh/v2)
 
 ## git介绍
 
@@ -280,7 +280,7 @@ git log -S function_name
 git log --patch / git log -p
 
 # 查看简略信息，比如文件的新增、修改、删除等
-git log --stats
+git log --stat
 
 # 只显示 --stat 中最后的行数修改添加移除统计
 git log --shortstat

@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./static/css/vue.css" title="vue">
+  <link rel="stylesheet" href="./css/code.css">
   <link rel="stylesheet" href="./static/css/buble.css" title="buble" data-type="theme" disabled>
   <link rel="stylesheet" href="./static/css/dark.css" title="dark" data-type="theme" disabled>
   <link rel="stylesheet" href="./static/css/pure.css" title="pure" data-type="theme" disabled>
   <link rel="stylesheet" href="./static/css/dolphin.css" title="dolphin" data-type="theme" disabled>
-  <link rel="stylesheet" href="./css/code.css">
   
 </head>
 
@@ -76,6 +76,11 @@
       auto2top: true,
       // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间
       topMargin: 90,
+      search: {
+        placeholder: '搜索',
+        noData: '找不到结果!',
+        namespace: 'docs/index'
+      },
       plugins: [
         function(hook) {
           var header = `<div>更新时间：{docsify-updated}</div><hr>`;
@@ -99,9 +104,9 @@
   <!-- emoji表情解析 -->
   <script src="./static/js/emoji.min.js"></script>
   <!-- 搜索功能 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="./static/js/search.min.js"></script>
   <!-- 分页功能 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="./static/js/docsify-pagination.min.js"></script>
   
 </body>
 

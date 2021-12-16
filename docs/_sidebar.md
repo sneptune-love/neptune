@@ -6,6 +6,7 @@
     * [TS](/docs/base/ts)
     * [Canvas](/docs/base/canvas)
     * [Audio](/docs/base/audio)
+    * [扩展功能](/docs/base/ex)
     
 * 框架
     * [模块化](/docs/frame/module)

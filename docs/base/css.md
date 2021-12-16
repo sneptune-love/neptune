@@ -4,6 +4,7 @@
 `  CSS 层叠样式表（Cascading Style Sheets） `
 
 [收藏样式](./css/collect)
+[动画样式](./css/animation)
 
 ## 书写规范
 

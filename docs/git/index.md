@@ -2,6 +2,8 @@
 
 [git中文文档](https://git-scm.com/book/zh/v2)
 
+[token登录](./token)
+
 ## git介绍
 
 `git保存的不是文件的变化和差异，而是每次提交时候的快照信息`

@@ -9,7 +9,7 @@ commit是其实是一种记录改动的过程，不同的项目不同的团队�
 
 <b>(1) 在查看历史信息的时候，能够一目了然，以vue为例</b>
 
-<img src="../../static/screenshot/WechatIMG212.png" alt="" style="width: 600px;">
+<img src="/static/screenshot/WechatIMG212.png" alt="" style="width: 600px;">
 
 <b>(2) 在查看历史信息时，可以查看指定类型的信息</b>
 
@@ -19,12 +19,12 @@ commit是其实是一种记录改动的过程，不同的项目不同的团队�
 git log HEAD --grep feat
 ```
 
-<img src="../../static/screenshot/WX20200429-200126@2x.png" alt="" style="width: 600px;">
+<img src="/static/screenshot/WX20200429-200126@2x.png" alt="" style="width: 600px;">
 
 
 <b>(3) 规范的commit信息，在生成change log时会更加优雅</b>
 
-<img src="./static/screenshot/WX20200429-202718@2x.png" alt="" style="width: 600px;">
+<img src="/static/screenshot/WX20200429-202718@2x.png" alt="" style="width: 600px;">
 
 
 

@@ -11,6 +11,16 @@
 
 
 
+## 数据类型
+
+ECMAScript最新标准定义了8种数据类型
+
+7种原始数据类型: Undefined、Boolean、Number、String、BigInt、Symbol、Null
+
+还有一种数据类型Object
+
+检查数据类型可以用typeof来进行检测，注意null的typeof是object
+
 ## 浏览器支持类型
 
 > 浏览器对ECMAScript标准的支持情况 [查看](https://kangax.github.io/compat-table)

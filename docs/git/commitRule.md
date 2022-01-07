@@ -190,14 +190,18 @@ change log是每一个版本出现时，和上个版本比较的差异，其中�
 
  - type类型为fix和feat，其它类型则根据作者来决定是否生成在该文件中
 
-> 推荐一个插件[conventional-changelog](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli#readme)
-
+1、推荐一个node_modules包 [conventional-changelog](https://www.npmjs.com/package/conventional-changelog)
 ```
 $ npm install -g conventional-changelog-cli
 $ cd my-project
 $ conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+
 CHANGELOG.md文件预览
 
+<img src="../../static/screenshot/WX20200429-203209@2x.png" alt="" style="width: 600px;">
 
-<img src="./static/screenshot/WX20200429-203209@2x.png" alt="" style="width: 600px;">
+
+2、如果你使用的vscode编辑器，那么推荐使用 `whatchanged` 插件，安装完成后，可以使用 `cmd + shift + p` 唤起任务执行，搜索 `whatchanged`，点击生成变更日志，选择工作区文件 -> 选择版本范围，然后就会自动生成一个未保存的changelog文件，如下图所示:
+
+<img alt="图 7" src="../../static/screenshot/1641547179512.png" width="600" />  

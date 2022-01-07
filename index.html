@@ -42,8 +42,7 @@
       // 自动合并头部
       // autoHeader: true,
       // 文档加载的根路径
-      base: '/neptune/',
-      logo: '/static/images/mine.jpg',
+      logo: './static/images/mine.jpg',
       // 开启相对路径
       relativePath: true,
       name: 'docsify',
@@ -85,7 +84,7 @@
         function(hook) {
           var header = `<div>更新时间：{docsify-updated}</div><hr>`;
           hook.beforeEach(function(html) {
-            html.replace(/\.\.\/\.\.\/static/g, './static')
+            html = html.replace(/\.\.\/\.\.\/static/g, './static')
             return header + html;
           })
         }

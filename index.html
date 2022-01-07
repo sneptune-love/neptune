@@ -84,7 +84,7 @@
         function(hook) {
           var header = `<div>更新时间：{docsify-updated}</div><hr>`;
           hook.beforeEach(function(html) {
-            html.replace(/\.\.\/static/g, './static')
+            html.replace(/\.\.\/\.\.\/static/g, './static')
             return header + html;
           })
         }

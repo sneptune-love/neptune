@@ -1,3 +1,4 @@
+
 - [返回首页](/docs/index)
-- [du](./du)
-- [ls](./ls)
+
+- [安装教程](install)

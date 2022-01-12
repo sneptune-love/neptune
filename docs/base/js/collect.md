@@ -4,6 +4,9 @@
 
 ### URL参数获取（getQuery）
 
+<details>
+<summary>实现方法</summary>
+
 ```js
 
 function getQuery(key) {
@@ -25,7 +28,15 @@ function getQuery(key) {
 
 ```
 
+</details>
+
+
+
 ### 参数拼接（queryConcatString）
+
+
+<details>
+<summary>实现方法</summary>
 
 ```js
 function queryConcatString(obj) {
@@ -39,6 +50,7 @@ function queryConcatString(obj) {
 }
 
 ```
+</details>
 
 ### 深度克隆（deepClone）
 
@@ -117,7 +129,7 @@ function throttle(fn, wait) {
 
 ### 函数只执行一次（once）
 
-<details open>
+<details>
 <summary>实现方法</summary>
 
 ```js
@@ -151,7 +163,7 @@ c(); // 无输出
 
 ### 删除数组中某一项（removeArrayItem）
 
-<details open>
+<details>
 <summary>实现方法</summary>
 
 ```js
@@ -170,7 +182,7 @@ function removeArrayItem(array, item) {
 
 > 时间复杂度O(logN)
 
-<details open>
+<details>
 <summary>实现方法</summary>
 
 ```js

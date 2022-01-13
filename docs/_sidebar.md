@@ -10,8 +10,9 @@
 - 框架
   - [模块化](/docs/frame/module)
   - [Vue](/docs/frame/vue/index)
-  - [React](/docs/frame/react)
-  - [Week](/docs/frame/week)
+  - [React](/docs/frame/react/index)
+  - [Weex](/docs/frame/weex/index)
+  - [Egg](/docs/frame/egg/index)
 
 - 构建
   - [Webpack](/docs/build/Webpack)

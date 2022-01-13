@@ -3,9 +3,32 @@
 
 ## mac相关信息
 
+
+mac终端上经常使用的命令集合
+
+
+```bash
+# 展示文件列表目录并过滤出包含abc的文件展示
+ls | grep 'abc'
+
+# 查看本机ip
+ifconfig
+
+# 查看网址解析域名
+ping www.baidu.com
+
+# 查看历史记录
+history
+
+# 查看9000端口使用信息, -i参数表示网络链接，:80指明端口号，该命令会同时列出PID，方便kill
+lsof -i tcp:9000
+
+# 杀死进程
+sudo kill -9 PID
+
+```
+
 介绍一些mac电脑需要用的软件
-
-
 
 ### 安装brew
 

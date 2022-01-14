@@ -103,6 +103,10 @@ sudo curl -O -L http://downloads.sourceforge.net/project/sshpass/sshpass/1.06/ss
 
 [mysql下载地址](https://dev.mysql.com/downloads/mysql/)
 
+本机下载mysql，版本号如果过高，比如8.0.27需要注意以下内容：
+
+在设置初始密码的时候，建议选择弱类型密码，如果选择第一个推荐的强类型密码，那么在node中链接mysql的时候会出现连接不上的问题
+
 ### docker安装
 
 [docker下载地址](https://docs.docker.com/desktop/mac/install/)

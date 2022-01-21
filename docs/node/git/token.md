@@ -24,6 +24,8 @@
   ```bash
   # 清除store, 如果是系统配置，则使用--system
   git config --global --unset credential.helper
+  # 设置缓存store，设置完成后，重新进行git操作，输入用户名，密码，即可缓存成功
+  git config --global credential.helper store
   ```
   
   4、重新进行git操作命令时，提示输入username和password就代表缓存已经清理掉了，输入github账户名，password就是申请的token

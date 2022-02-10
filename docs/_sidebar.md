@@ -15,7 +15,7 @@
   - [Egg](/docs/frame/egg/index)
 
 - 构建
-  - [Webpack](/docs/build/Webpack)
+  - [Webpack](/docs/build/Webpack/index)
   - [Vite](/docs/build/Vite)
 
 - Node

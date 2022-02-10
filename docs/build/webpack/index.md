@@ -2,7 +2,7 @@
 
 
 
-##  webpack介绍
+##  webpack5介绍
 
 webpack是一个构建工具，会根据入口搭建一个依赖图，然后将项目中关联的资源打包成若干个bundle，输出到指定的目录，并将其关联关系整理好，其流程如下：
 
@@ -20,6 +20,19 @@ npm install webpack webpack-cli --save-dev
 
 ## 配置文件解析
 
+webpack启动的时候默认会在根目录下查找配置文件webpack.config.js
+
+如果想指定配置文件，请在webpack命令后面追加--config xxx/webpack.config.js
+
+配置文件遵循下面格式
+
+```
+module.exports = {}
+
+```
+
+下面我们来介绍一下这个配置对象里面的内容吧
+
 ### mode - 配置优化模式
 
 ```js
@@ -30,6 +43,20 @@ mode: 'development'
 // 会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 production。为模块和 chunk 启用确定性的混淆名称
 mode: 'production'
 
+```
+
+### cache - 打包缓存
+
+缓存生成的 webpack 模块和 chunk，来改善构建速度
+
+cache 会在开发 模式被设置成 type: 'memory' 而且在 生产 模式 中被禁用
+
+```js
+cache: true | false,
+cache: {
+  // 将 cache 类型设置为内存或者文件系统
+  type: 'filesystem' // string: 'memory' | 'filesystem'
+},
 ```
 
 ### devtool - sourceMap文件生成配置
@@ -165,6 +192,11 @@ String类型 | Array类型，
 entry: './a.js',
 // 多入口
 entry: ['./a.js', './b.js']
+// 多入口，指定入口名称 -- 在配置output的filename时，可以通过[name]来获取该入口名称
+entry: {
+  entryA: './a.js',
+  entryB: './b.js'
+}
 
 ```
 
@@ -289,6 +321,11 @@ resolve: {
 ### plugins - 扩展插件
 
 ```js
+const chalk = require('chalk')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 plugins: [
   // css文件抽离和压缩
   new MiniCssExtractPlugin({
@@ -299,7 +336,13 @@ plugins: [
   new HtmlWebpackPlugin({
     title: '测试demo'
   })
-],
+  // 打包进度条展示
+  new ProgressBarPlugin({
+    format: `  :msg [:bar] ${chalk.green.bold(':percent')} (:elapsed s)`
+  })
+  // 打包体积分析，默认配置会自动创建一个服务，并打开浏览器
+  new BundleAnalyzerPlugin()
+]
 
 ```
 
@@ -308,45 +351,82 @@ plugins: [
 ```js
 optimization: {
   // 告知 webpack 使用 TerserPlugin 或其它在 optimization.minimizer 定义的插件压缩 bundle
-  `minimize`: true, // boolean = true
+  minimize: true, // boolean = true
   // 允许你通过提供一个或多个定制过的 TerserPlugin 实例， 覆盖默认压缩工具(minimizer)
-  `minimizer`: '', // [TerserPlugin] 或 [function (compiler)]
+  minimizer: '', // [TerserPlugin] 或 [function (compiler)]
   // 将 optimization.runtimeChunk 设置为 true 或 'multiple'，会为每个入口添加一个只含有 runtime 的额外 chunk
-  `runtimeChunk`: true, // 其值为object string boolean
+  runtimeChunk: true, // 其值为object string boolean
   // 编译时每当有错误时，就会 emit asset。这样可以确保出错的 asset 被 emit 出来。关键错误会被 emit 到生成的代码中，并会在运行时报错
-  `emitOnErrors`: true , // boolean = false
+  emitOnErrors: true , // boolean = false
   // 告知 webpack 当选择module id 时需要使用哪种算法
-  `moduleIds`: '',  // boolean: false string: 'natural'(按使用顺序的数字 id) | 'named'(对调试更友好的可读的 id) | 'deterministic'(被哈希转化成的小位数值模块名) | 'size'(专注于让初始下载包大小更小的数字 id)
+  moduleIds: '',  // boolean: false string: 'natural'(按使用顺序的数字 id) | 'named'(对调试更友好的可读的 id) | 'deterministic'(被哈希转化成的小位数值模块名) | 'size'(专注于让初始下载包大小更小的数字 id)
   // 告知 webpack 当选择chunk id 时需要使用哪种算法
-  `chunkIds`: '', // boolean = false string: 'natural' | 'named' | 'size' | 'total-size'(专注于让总下载包大小更小的数字 id) | 'deterministic'
+  chunkIds: '', // boolean = false string: 'natural' | 'named' | 'size' | 'total-size'(专注于让总下载包大小更小的数字 id) | 'deterministic'
   // 告知 webpack 将 process.env.NODE_ENV 设置为一个给定字符串
-  `nodeEnv`: '', // boolean = false string
+  nodeEnv: '', // boolean = false string
   // 在设置为 true 时，告知 webpack 通过将导入修改为更短的字符串，来减少 WASM 大小。这会破坏模块和导出名称
-  `mangleWasmImports`: false, // boolean = false
+  mangleWasmImports: false, // boolean = false
   // 如果模块已经包含在所有父级模块中，告知 webpack 从 chunk 中检测出这些模块，或移除这些模块。将 optimization.removeAvailableModules 设置为 true 以启用这项优化。在 生产 模式 中默认会被开启
-  `removeAvailableModules`: false, // boolean = false
+  removeAvailableModules: false, // boolean = false
   // 如果 chunk 为空，告知 webpack 检测或移除这些 chunk。将 optimization.removeEmptyChunks 设置为 false 以禁用这项优化
-  `removeEmptyChunks`: true, // boolean = true
+  removeEmptyChunks: true, // boolean = true
   // 告知 webpack 合并含有相同模块的 chunk。将 optimization.mergeDuplicateChunks 设置为 false 以禁用这项优化
-  `mergeDuplicateChunks`: true, // boolean = true
+  mergeDuplicateChunks: true, // boolean = true
   // 告知 webpack 确定和标记出作为其他 chunk 子集的那些 chunk，其方式是在已经加载过较大的 chunk 之后，就不再去加载这些 chunk 子集。optimization.flagIncludedChunks 默认会在 生产 模式 中启用，其他情况禁用
-  `flagIncludedChunks`: false, // boolean
+  flagIncludedChunks: false, // boolean
   // 告知 webpack 去确定那些由模块提供的导出内容，为 export * from ... 生成更多高效的代码。默认 optimization.providedExports 会被启用
-  `providedExports`: false, // boolean
+  providedExports: false, // boolean
   // 告知 webpack 去决定每个模块使用的导出内容
-  `usedExports`: true, // boolean = true string: 'global'
+  usedExports: true, // boolean = true string: 'global'
   // 告知 webpack 去寻找模块图形中的片段，哪些是可以安全地被合并到单一模块中
-  `concatenateModules`: true, // boolean
+  concatenateModules: true, // boolean
   // 告知 webpack 去辨识 package.json 中的 副作用 标记或规则，以跳过那些当导出不被使用且被标记不包含副作用的模块
-  `sideEffects`: true, // boolean = true string: 'flag'
+  sideEffects: true, // boolean = true string: 'flag'
   // 告知 webpack 生成带有相对路径的记录(records)使得可以移动上下文目录
-  `portableRecords`: false, // boolean
+  portableRecords: false, // boolean
   // 允许控制导出处理
-  `mangleExports`: false, // boolean string: 'deterministic' | 'size'
+  mangleExports: false, // boolean string: 'deterministic' | 'size'
   // 告知 webpack 是否对未使用的导出内容，实施内部图形分析(graph analysis)
-  `innerGraph`: true, // boolean = true
+  innerGraph: true, // boolean = true
   // 添加额外的哈希编译，如果设置为false，则采用内部数据来进行哈希计算
-  `realContentHash`: true, // boolean = true
+  realContentHash: true, // boolean = true
+  // 分离公用的chunk配置，下面这个配置时splitChunksPlugin的默认行为
+  splitChunks: {
+    // all代表所有，async代表异步，initial代表同步；同时chunks也可以是一个函数
+    chunks: 'async',
+    // 返回false代表不分离name为my-excluded-chunk的chunk
+    chunks(chunk) {
+      return chunk.name !== 'my-excluded-chunk';
+    },
+    // 生成 chunk 的最小体积，20000bytes ~= 20keb
+    minSize: 20000,
+    // 拆分后剩余的单个chunk最小体积大小
+    minRemainingSize: 0,
+    // 拆分前必须共享模块的最小 chunks 数
+    minChunks: 1,
+    // 按需加载时的最大并行请求数
+    maxAsyncRequests: 30,
+    // 入口点的最大并行请求数
+    maxInitialRequests: 30,
+    // 强制执行拆分的体积阈值和其他限制（minRemainingSize，maxAsyncRequests，maxInitialRequests）将被忽略
+    enforceSizeThreshold: 50000,
+    // 缓存组配置，可继承和覆盖上面的任何选项，比如chunks、minSize等
+    cacheGroups: {
+      defaultVendors: {
+        // 匹配规则，[\\/]兼容不同机型的写法
+        test: /[\\/]node_modules[\\/]/,
+        // 优先级比，值越大，优先级越高，默认组的优先级为负值，自定义组的优先级为0
+        priority: -10,
+        // 如果当前 chunk 包含已从主 bundle 中拆分出的模块，则它将被重用
+        reuseExistingChunk: true,
+      },
+      default: {
+        minChunks: 2,
+        priority: -20,
+        reuseExistingChunk: true,
+      }
+    }
+  },
 }
 
 ```

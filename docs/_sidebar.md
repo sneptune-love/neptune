@@ -9,6 +9,7 @@
   
 - 框架
   - [模块化](/docs/frame/module)
+  - [Eslint](/docs/frame/eslint)
   - [Vue](/docs/frame/vue/index)
   - [React](/docs/frame/react/index)
   - [Weex](/docs/frame/weex/index)
@@ -29,13 +30,14 @@
   - [network](/docs/server/network/index)
   - [nginx](/docs/server/nginx/index)
   - [shell](/docs/server/shell/index)
+  - [whistle](/docs/server/whistle)
 
 - 平台
   - [微信](/docs/platform/Wx)
   - [企业微信](/docs/platform/qyWx)
   
 - 编辑器
-  - [Vscode](/docs/editor/vscode/index)
+  - [Vscode](/docs/editor/vscode)
   
 - [调试工具](/docs/build/debug)
   

@@ -1,5 +1,34 @@
 
 
+
+## 键盘快捷键
+
+全部收起 -- `command + shift + K`
+
+全部展开 -- `command + shift + L`
+
+收起指定区域 -- `option + command + [`
+  
+展开指定区域 -- `option + command + [`
+
+收起指定区域以外的部分 -- `command + k command + -`
+
+展开指定区域意外的部分 -- `command + k command + =`
+
+展开指定区域意外的部分 -- `command + k command + =`
+
+复制当前行到下一行 -- `shift + option + 下`
+
+行注释 -- `command + /`
+
+块注释 -- `shift + option + a`
+
+展示vs内置终端 -- `ctrl + ~`
+
+光标移动 -- `command + 上/下/左/右`
+
+
+
 ## vscode 常用扩展推荐
 
 | 扩展包名 | 功能 |
@@ -25,4 +54,8 @@
 | Code Runner | 执行代码文件 |
 | Code Runner | 执行代码文件 |
 | Code Runner | 执行代码文件 |
+
+
+
+
 

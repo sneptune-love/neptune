@@ -1,4 +1,4 @@
 
 * [首页](/docs/index)
 
-* [node介绍](./index)
+* [Other](./index)

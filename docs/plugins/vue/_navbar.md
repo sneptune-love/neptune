@@ -1,6 +1,8 @@
 
 * [首页](/docs/index)
 
+* [vue3项目搭建](vue3/index)
+
 * [Vue介绍](index)
 
 * [Vue Api](vue)

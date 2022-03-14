@@ -1,21 +1,19 @@
 - 基础知识
-  - [HTML](/docs/base/html)
-  - [CSS](/docs/base/css)
-  - [JS](/docs/base/js)
+  - [HTML](/docs/base/html/index)
+  - [CSS](/docs/base/css/index)
+  - [JS](/docs/base/js/index)
   - [TS](/docs/base/ts)
-  - [Canvas](/docs/base/canvas)
-  - [Audio](/docs/base/audio)
-  - [扩展功能](/docs/base/ex)
+  - [Network](/docs/base/network/index)
   
-- 框架
-  - [模块化](/docs/frame/module)
-  - [Eslint](/docs/frame/eslint)
-  - [Vue](/docs/frame/vue/index)
-  - [React](/docs/frame/react/index)
-  - [Weex](/docs/frame/weex/index)
-  - [Egg](/docs/frame/egg/index)
+- Plugins
+  - [Module](/docs/plugins/module)
+  - [Eslint](/docs/plugins/eslint)
+  - [Vue](/docs/plugins/vue/index)
+  - [React](/docs/plugins/react/index)
+  - [Weex](/docs/plugins/weex/index)
+  - [Egg](/docs/plugins/egg/index)
 
-- 构建
+- Build
   - [Webpack](/docs/build/Webpack/index)
   - [Vite](/docs/build/Vite)
 
@@ -24,25 +22,25 @@
   - [npm](/docs/node/npm/index)
   - [git](/docs/node/git/index)
   
-- 服务端
-  - [数据库](/docs/server/database/index)
+- Serve
+  - [Database](/docs/server/database/index)
   - [linux](/docs/server/linux/index)
-  - [network](/docs/server/network/index)
   - [nginx](/docs/server/nginx/index)
   - [shell](/docs/server/shell/index)
-  - [whistle](/docs/server/whistle)
 
-- 平台
+- Platform
   - [微信](/docs/platform/Wx)
   - [企业微信](/docs/platform/qyWx)
   
-- 编辑器
+- Editor
   - [Vscode](/docs/editor/vscode)
   
-- [调试工具](/docs/build/debug)
+- [Debug](/docs/debug/index)
   
 - [Mac](/docs/mac/index)
   
-- [面试](/dcos/interview/index)
+- [Interview](/docs/interview/index)
 
-- [专栏](/docs/question/index)
+- [QA](/docs/question/index)
+
+- [其它](/docs/Other/index)

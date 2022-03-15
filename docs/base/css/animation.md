@@ -1,4 +1,8 @@
+
+
 # 收藏动画效果
+
+可以参考[animate.css](https://www.dowebok.com/demo/2014/98/)网站的动画样式
 
 ## 弹窗出现动画
 

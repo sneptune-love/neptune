@@ -15,7 +15,9 @@
 
 - Build
   - [Webpack](/docs/build/Webpack/index)
-  - [Vite](/docs/build/Vite)
+  - [Vite](/docs/build/Vite/index)
+  - [Rollup](/docs/build/rollup/index)
+  - [Gulp](/docs/build/gulp/index)
 
 - Node
   - [node](/docs/node/index)
@@ -29,8 +31,8 @@
   - [shell](/docs/server/shell/index)
 
 - Platform
-  - [微信](/docs/platform/Wx)
-  - [企业微信](/docs/platform/qyWx)
+  - [微信](/docs/platform/weixin/index)
+  - [企业微信](/docs/platform/miniprogram/index)
   
 - Editor
   - [Vscode](/docs/editor/vscode)
@@ -38,6 +40,8 @@
 - [Debug](/docs/debug/index)
   
 - [Mac](/docs/mac/index)
+
+- [Book](/docs/book/index)
   
 - [Interview](/docs/interview/index)
 

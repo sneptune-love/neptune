@@ -50,7 +50,7 @@ n rm 11.0.0
 
 ### node版本管理工具nvm
 
-安装前先将已安装的node移除
+`安装前先将已安装的node移除`
 
 > 安装命令：
 
@@ -68,4 +68,16 @@ nvm install v12.6.0
 // 选择node版本
 nvm use v12.6.0
 ```
+
+
+> 如何在shell命令中使用nvm
+
+在.sh文件中执行nvm命令时，会出现nvm: command not fund，原因是nvm是一个脚本而不是指令，在.sh文件中加入一行代码，再执行nvm命令即可
+
+```bash
+source ~/.nvm/nvm.sh
+
+nvm ls
+```
+
 

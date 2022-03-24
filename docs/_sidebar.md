@@ -4,6 +4,7 @@
   - [JS](/docs/base/js/index)
   - [TS](/docs/base/ts)
   - [Network](/docs/base/network/index)
+  - [Browser](/docs/base/browser/index)
   
 - Plugins
   - [Module](/docs/plugins/module)

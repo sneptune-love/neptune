@@ -3,38 +3,15 @@
 
 `JS（Javascript）`
 
-
-:fire: [收藏函数](./collect)  :fire: [js小技巧](./technique)
-
 ## 数据类型
 
-ECMAScript最新标准定义了8种数据类型
+> ECMAScript最新标准定义了8种数据类型
 
-7种原始数据类型: Undefined、Boolean、Number、String、BigInt、Symbol、Null
+7种原始数据类型: `Undefined、Boolean、Number、String、BigInt、Symbol、Null`
 
-还有一种数据类型Object
+还有一种引用数据类型`Object`
 
 检查数据类型可以用typeof来进行检测，注意null的typeof是object
-
-## 浏览器支持类型
-
-> 浏览器对ECMAScript标准的支持情况 [查看](https://kangax.github.io/compat-table)
-
-* ECMAScript 3 - 所有浏览器都支持
-
-* ECMAScript 5（ES5） - 所有现代浏览器都支持
-
-* ECMAScript 6（ECMAScript2015 | ES6）- 大部分浏览器都支持
-
-
-## JavaScript错误参考
-
-[错误列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors)
-
-## JS事件大全
-
-[传送门](https://developer.mozilla.org/zh-CN/docs/Web/Events)
-
 
 ## 变量声明和变量提升
 
@@ -95,6 +72,7 @@ console.log(a); // 1
 ```
 </details>
 
+
 ## 条件判断
 
 <details open>
@@ -134,7 +112,7 @@ switch(a) {
 ```
 </details>
 
-## 循环
+## 循环方法
 
 <details open>
 <summary>for 循环</summary>
@@ -214,7 +192,7 @@ for (var i of a) {
 </details>
 
 
-## 事件
+## 默认、冒泡和委托事件
 
 <hr>
 
@@ -268,12 +246,9 @@ parent.onclick = function(e) {
 
 ## 函数
 
-<hr>
+### 函数参数
 
-<details open>
-<summary>参数：arguments</summary>
-
-> 是一种对应传递给函数的参数的类数组对象
+> 参数：arguments -- 是一种对应传递给函数的参数的类数组对象
 
 * arguments是所有函数（箭头函数除外）内部都可以使用的局部变量
 
@@ -298,11 +273,8 @@ for (var i of arguments) {
 }
 
 ```
-</details>
 
-<hr>
-<details open>
-<summary>函数形式</summary>
+### 函数声明
 
 > 声明式函数，可以写在全局作用域的任意位置，同声明变量一样，会在代码执行前进行声明
 
@@ -334,28 +306,7 @@ btn.onclick = function() {}
 
 ```
 
-</details>
-
-
-## 对象
-<hr>
-<details open>
-<summary>创建对象</summary>
-
-```js
-var obj = {};
-
-var obj = new Object();
-
-// 创建一个原型为空的对象
-var obj = Object.create(null);
-
-```
-</details>
-
-<hr>
-<details open>
-<summary>原型和原型链</summary>
+### 函数原型链
 
 > 每个对象都有原型，以原型为模板，从原型继承属性和方法。原型对象也可能有原型，并从中继承属性和方法，一层一层，以此类推。这种关系就称为原型链
 
@@ -370,11 +321,60 @@ var a = {};
 var b = function() {}
 
 ```
-</details>
 
-<hr>
 
-## ECMAScript 2015（ES6）
+### 函数作用域
+TODO
+
+### 闭包
+TODO
+
+### this
+TODO
+
+### new构造符
+TODO
+
+## 对象
+###  创建对象
+
+```js
+var obj = {};
+
+var obj = new Object();
+
+// 创建一个原型为空的对象
+var obj = Object.create(null);
+
+```
+
+### 内置对象
+
+[传送门](https://developer.mozilla.org/zh-CN/docs/Web/Events)
+
+
+
+
+## 事件轮询
+
+> js执行自上而下
+## JavaScript错误参考
+
+[错误列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors)
+
+
+## ECMA标准
+
+> 浏览器对ECMAScript标准的支持情况 [查看](https://kangax.github.io/compat-table)
+
+* ECMAScript 3 - 所有浏览器都支持
+
+* ECMAScript 5（ES5） - 所有现代浏览器都支持
+
+* ECMAScript 6（ECMAScript2015 | ES6）- 大部分浏览器都支持
+
+
+### ECMAScript 2015（ES6）
 
 > 浏览器支持情况，chrome >= 58、safari >= 10、Firefox >= 54
 
@@ -452,7 +452,7 @@ var b = function() {}
     - isNaN()
 
 
-## ECMAScript 2016
+### ECMAScript 2016
 
 - 求幂运算符 `**`
 
@@ -486,7 +486,7 @@ fruits.include("Mango") // result is true
 
 ```
 
-## ECMAScript 2017
+### ECMAScript 2017
 
 - String Padding（字符串补位）
 
@@ -545,7 +545,7 @@ demo(); // x is "setTimeout done"
 
 ```
 
-## ECMAScript 2018
+### ECMAScript 2018
 
 - 异步迭代for/of 可以使用await关键字
 
@@ -565,7 +565,6 @@ z; // {3, 4, 5}
 ```
 
 - 新增4种正则匹配规则
-
 
 
 

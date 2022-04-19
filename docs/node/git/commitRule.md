@@ -169,7 +169,7 @@ npm i husky --save-dev
 
 注意：
 
-1、作者下载的是4.2.5版本husky，需要node版本大于10，git版本大于2.13.0；检查.git目录下hooks中是否生成了不带.sample文件后缀的文件，如果有则代表安装成功，否则安装失败
+1、作者下载的是4.2.5版本husky，需要node版本大于10，git版本大于2.13.0；检查.git目录下hooks中是否生成了不带.sample文件后缀的文件husky.sh，如果有则代表安装成功，否则安装失败
 
 2、命令行commit成功能检测，sourcetree commit时直接跳过并抛出找不到npx path问题；原因就是路径匹配不到，此时在~/下面建立.huskyrc文件，文件内容如下：
 

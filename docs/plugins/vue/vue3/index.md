@@ -1,10 +1,21 @@
 
 
 # vue3项目搭建
-
-## vue-cli搭建基础架构
+## vue-cli开始搭建
 
 [vue-cli官网](https://cli.vuejs.org/zh/)
+
+此步骤实现了如下功能：
+
+- less语法编译 + css浏览器兼容前缀 Autoprefixer
+
+- ts语法编译
+
+- vue-router
+
+- vuex
+
+- eslint检测
 
 :fire: 推荐使用vue-cli自动搭建基本配置，然后添加一些自定义配置来完成项目搭建
 
@@ -49,9 +60,9 @@ vue create test-demo
 
 ## 移动端px适配
 
-目前移动端的适配方案有两种
+目前移动端的适配方案有两种（因为目前浏览器兼容性较好，该仓库也推荐使用vw适配方案）
 
-1、px转rem，用手淘的lib-flexible库（因为目前浏览器兼容性较好，该仓库也推荐使用vw适配方案）
+1、px转rem，用手淘的lib-flexible库
 
 2、px转vw，使用postcss-px-to-viewport
 
@@ -71,6 +82,43 @@ module.exports = {
       minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
       mediaQuery: false // 允许在媒体查询中转换`px
     }
+  }
+}
+```
+
+
+## commit检测提交
+
+[传送门](/docs/node/git/commitRule?id=如何强制校验commit信息)
+
+1、先安装commit校验包
+
+```bash
+sudo yarn add @commitlint/cli @commitlint/config-conventional -g
+```
+
+2、创建commit校验规则配置文件commitlint.config.js，本次使用推荐的默认配置
+
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional']
+}
+```
+
+3、安装husky包，来触发git commit前的校验；本次使用的husky版本为`4.x系列`
+
+```bash
+sudo yarn add husky@^4.2.5. --dev
+```
+
+`安装成功后，在项目根目录>.git>hooks中能找到husky.sh和husky.local.sh两个文件，才代表安装成功`
+
+4、在package.json文件中增加husky hooks配置，与dep同级
+
+```json
+"husky": {
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
 ```

@@ -1,17 +1,6 @@
 
 * [首页](/docs/index)
+* [vue](/docs/plugins/vue/index)
+* [vue2](/docs/plugins/vue/vue2/index)
+* [vue3](/docs/plugins/vue/vue3/index)
 
-* [vue3项目搭建](vue3/index)
-
-* [Vue介绍](index)
-
-* [Vue Api](vue)
-
-* [Vue源码解析](vueCode)
-  * [Vue2.x版本](vue2.x.md)
-
-* [Vue-Router](vue-router)
-
-* [Vuex](vuex)
-
-* [VueSsr](vueSsr)

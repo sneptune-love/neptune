@@ -3,6 +3,12 @@
 
 `Network 网络协议`
 
+网络请求实现的常用方式有两种：
+
+1、[XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)
+
+2、[Fetch API](https://fetch.spec.whatwg.org/#methods) 
+
 
 ## 请求内容
 
@@ -260,7 +266,7 @@ application/json
 > http的加密版本，通过SSL或者TSL来加密客户端和服务端的所有通信
 
 
-## 跨源CORS
+## 跨域CORS
 
 > Cross-origin sharing standard
 
@@ -272,7 +278,7 @@ application/json
 4、canvas中的drawImage将image/video绘制到canvas中
 5、使用images来创建css图形
 
-## 浏览器CORS预检
+## 浏览器跨域预检CORS
 
 浏览器会先发送options请求，来检测该请求是否能够跨域请求。如果满足以下所有条件，则不会发送预检请求（不适合fetch api）
 

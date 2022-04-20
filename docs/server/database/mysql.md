@@ -20,13 +20,13 @@
 
 SQL语言：对数据库进行查询和修改操作的结构化查询语言
 
-1、数据定义语言（DDL）：DROP、CREATE、ALTER等语句
+1、数据定义语言（DDL）：drop、create、alter等语句
 
-2、数据操作语言（DML）：INSERT、UPDATE、DELETE语句
+2、数据操作语言（DML）：insert、update、delete语句
 
-3、数据查询语言（DQL）：SELECT语句
+3、数据查询语言（DQL）：select语句
 
-4、数据控制语言（DCL）：GRANT、REVOKE、COMMIT、ROLLBACK等语句
+4、数据控制语言（DCL）：grant、revoke、commit、rollback等语句
 
 
 
@@ -42,6 +42,43 @@ MySQL登录方式  mysql -h hostname -u username -p
 
 数据库存储引擎是数据库底层软件组织，数据库管理系统使用数据引擎进行创建、查询、更新和删除操作。不同的存储引擎提供不同的存储机制，索引技巧，锁定水平等功能，使用不同的存储引擎，还可以获得特定的功能。MySQL的核心就是存储引擎
 
+
+
+5.1 数据类型介绍
+
+1、数值数据类型：整数类型tinyInt(1字节)、smallInt(2字节)、mediumInt(3字节)、Int(4字节)、bigInt(8字节)、浮点小数数据类型float(4字节)、double(8字节)，定点小数类型decimal(M+2字节)
+
+例如tinyInt需要1个字节(8bits)来存储，那么它的无符号数的最大值为(2^8 - 1 = 255)
+
+decimal不指定精度的话，默认为(10, 0)
+
+2、日期/时间类型：包括year(1字节)、time(3字节)、date(3字节)、dateTime(8字节)和timeStamp(4字节)
+
+year格式为YYYY、time格式为HH:MM:SS、date格式为YYYY-MM-DD、dateTime格式为YYYY-MM-DD HH:MM:SS，timeStamp格式同dateTime一致
+
+timeStamp存储的值以UTC世界标准时间格式存储的，存储时对当前时区进行转换，检索时再转换回当前时区。即查询时，根据当前时区的不同，显示的时间值是不同的
+
+
+3、字符串类型：包括char(M字节，1<=M<=255)、varChar(L+1字节，L<=M 1<=M<=255)、binary(M字节)、varBinary(M+1字节)、blob(L+2字节，L<2^16)、text(L+2字节，L<2^16)、enum(1或2个字节，取决于枚举数的数量(最大值65535))和set(1,2, 3, 4或者8个字节，取决于集合成员的数量(最多64个成员))等
+
+char是固定长度字符串，例如char(10)，代表该字符串一定是长度等于10的，如果插入数据不足，则用空格来填充达到指定长度
+
+
+5.3.3 比较运算符
+
+least(2, 0, ...) 在有两个或多个参数时，返回最小值
+
+greatest(2, 0, ...) 在有两个或多个参数时，返回最大值
+
+a between x and y 判断a是否在x y之间
+
+x in(2, 0, ...) 判断一个值是in列表中的任意一个值
+
+x not in(2, 0, ...) 判断一个值不是in列表中的任意一个值
+
+'ddd' like 'd_'  通配符匹配
+
+regexp 正则表达式匹配
 
 
 

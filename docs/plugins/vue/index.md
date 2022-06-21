@@ -5,6 +5,8 @@
 
 [使用cli搭建一个vue3.x 移动端项目](./vue3/index)
 
+[vue中的使用技巧](./vue-info)
+
 ## Vue相关信息
 
 

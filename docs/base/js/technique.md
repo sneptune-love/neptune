@@ -4,7 +4,7 @@
 
 ### throw
 
-throw如果没有catch接受，会阻塞后续代码执行
+throw如果没有catch接收，会阻塞后续代码执行
 
 ```js
 function a(){

@@ -1,4 +1,6 @@
 
 - [主页](/docs/index)
 
-- [Book](./index)
+- [收藏文章](./article)
+
+- [文档搭建](./doc)

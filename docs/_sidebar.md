@@ -42,7 +42,7 @@
   
 - [Mac](/docs/mac/index)
 
-- [Book](/docs/book/index)
+- [收藏文档](/docs/book/index)
   
 - [Interview](/docs/interview/index)
 

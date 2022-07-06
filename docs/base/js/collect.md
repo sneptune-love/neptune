@@ -2,13 +2,12 @@
 
 ## 收藏JS方法
 
-### URL参数获取(getQuery)
+### URL参数获取 getQuery
 
 <details open>
 <summary>实现方法</summary>
 
 ```js
-
 function getQuery(key) {
   if (location.href.indexOf('?') == -1) {
     return '';
@@ -25,12 +24,11 @@ function getQuery(key) {
   }
   return decodeURIComponent(res);
 }
-
 ```
 </details>
 
 
-### 参数拼接(queryConcatString)
+### 参数拼接 queryConcatString
 
 <details open>
 <summary>实现方法</summary>
@@ -49,7 +47,7 @@ function queryConcatString(obj) {
 ```
 </details>
 
-### 深度克隆(deepClone)
+### 深度克隆 deepClone
 
 > 下文方法只针对多层对象结构，递归处理
 
@@ -73,7 +71,7 @@ function deepClone(obj) {
 
 </details>
 
-### 防抖函数(debounce)
+### 防抖函数 debounce
 
 > 触发高频事件后n秒内函数只会执行一次，如果n秒内高频事件再次被触发，则重新计算时间
 
@@ -112,7 +110,7 @@ window.onscroll = debounce(function() {
 
 </details>
 
-### 节流函数(throttle)
+### 节流函数 throttle
 
 > 高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率
 
@@ -121,7 +119,6 @@ window.onscroll = debounce(function() {
 <summary>实现方法</summary>
 
 ```js
-
 function throttle(fn, wait) {
     var timer;
     return function() {
@@ -133,12 +130,11 @@ function throttle(fn, wait) {
         }, wait)
     }
 }
-
 ```
 
 </details>
 
-### 函数只执行一次(once)
+### 函数只执行一次 once
 
 <details open>
 <summary>实现方法</summary>
@@ -168,11 +164,10 @@ a(); // 1
 a(); // 无输出
 c(); // 2
 c(); // 无输出  
-
 ```
 </details>
 
-### 删除数组中某一项(removeArrayItem)
+### 删除数组中某一项 removeArrayItem
 
 <details open>
 <summary>实现方法</summary>
@@ -189,7 +184,7 @@ function removeArrayItem(array, item) {
 ```
 </details>
 
-### 重复某个字符串N次(repeatStr)
+### 重复某个字符串N次 repeatStr
 
 > 时间复杂度O(logN)
 
@@ -214,7 +209,7 @@ function repeat (str, n) {
 </details>
 
 
-### 倒计时(cutdownClass)
+### 倒计时 cutdownClass
 
 > 适用场景：单个或者多个倒计时
 
@@ -283,7 +278,7 @@ class cutdownClass {
 
 </details>
 
-### 日期格式化(formatDate)
+### 日期格式化 formatDate
 
 > 适用场景：时间戳转换为各种格式
 
@@ -326,6 +321,85 @@ function formatDate(date = new Date(), fmt = 'yyyy-MM-dd HH:mm:ss') {
 </details>
 
 
+### 日期格式化 - 挂载Date原型上
 
+> 代码来源于：https://gitee.com/mosowe/react-vite-app/blob/master/src/main.tsx
 
-### 
+```js
+Date.prototype.Format = function (fmt?: string) {
+  if (!fmt) { 
+    fmt = 'YYYY-MM-DD'
+  }
+  let o:any = {
+      'M+': this.getMonth() + 1, // 月份 
+      'D+': this.getDate(), // 日 
+      'h+': this.getHours(), // 小时 
+      'm+': this.getMinutes(), // 分 
+      's+': this.getSeconds(), // 秒 
+      'q+': Math.floor((this.getMonth() + 3) / 3), // 季度 
+      'S': this.getMilliseconds() // 毫秒 
+  };
+  if (/([yY]+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+  } 
+  for (let k in o) {
+    if (new RegExp('(' + k + ')').test(fmt)) {
+      let sk = RegExp.$1.length === 1? o[k] : ('00' + o[k]).substr(('' + o[k]).length);
+      fmt = fmt.replace(RegExp.$1, sk);
+    } 
+  }
+  return fmt;
+};
+
+```
+
+### 文案复制 copyText
+
+> 代码来源：https://github.com/vuejs/vitepress/blob/58da4c95d4f9eeceb5893eb4aaf132c593fc2a93/src/client/theme-default/composables/copy-code.ts
+
+```js
+function copyToClipboard(text: string) {
+  try {
+    return navigator.clipboard.writeText(text)
+  } catch {
+    const element = document.createElement('textarea')
+    const previouslyFocusedElement = document.activeElement
+
+    element.value = text
+
+    // Prevent keyboard from showing on mobile
+    element.setAttribute('readonly', '')
+
+    element.style.contain = 'strict'
+    element.style.position = 'absolute'
+    element.style.left = '-9999px'
+    element.style.fontSize = '12pt' // Prevent zooming on iOS
+
+    const selection = document.getSelection()
+    const originalRange = selection
+      ? selection.rangeCount > 0 && selection.getRangeAt(0)
+      : null
+
+    document.body.appendChild(element)
+    element.select()
+
+    // Explicit selection workaround for iOS
+    element.selectionStart = 0
+    element.selectionEnd = text.length
+
+    document.execCommand('copy')
+    document.body.removeChild(element)
+
+    if (originalRange) {
+      selection!.removeAllRanges() // originalRange can't be truthy when selection is falsy
+      selection!.addRange(originalRange)
+    }
+
+    // Get the focus back on the previously focused element, if any
+    if (previouslyFocusedElement) {
+      ;(previouslyFocusedElement as HTMLElement).focus()
+    }
+  }
+}
+
+```

@@ -2,6 +2,14 @@
 
 ## 收藏JS方法
 
+### cookie获取 getCookie
+
+> 一行代码搞定，牛逼！
+
+```js
+const getCookie = name => `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
+```
+
 ### URL参数获取 getQuery
 
 <details open>
@@ -28,12 +36,19 @@ function getQuery(key) {
 </details>
 
 
+### 将url参数转换为对象 urlParamsToObject 
+
+```js
+const urlParamsToObject = search => Object.fromEntries(new URLSearchParams(search))
+```
+
 ### 参数拼接 queryConcatString
 
 <details open>
 <summary>实现方法</summary>
 
 ```js
+
 function queryConcatString(obj) {
   var str = '';
   if (JSON.stringify(obj) == '{}') return str;
@@ -353,6 +368,13 @@ Date.prototype.Format = function (fmt?: string) {
 
 ```
 
+
+### 获取简单的时分秒 simpleGetHms
+
+```js
+const timeFromDate = date => date.toTimeString().slice(0, 8);
+```
+
 ### 文案复制 copyText
 
 > 代码来源：https://github.com/vuejs/vitepress/blob/58da4c95d4f9eeceb5893eb4aaf132c593fc2a93/src/client/theme-default/composables/copy-code.ts
@@ -402,4 +424,30 @@ function copyToClipboard(text: string) {
   }
 }
 
+```
+
+### 查找日期位于一年中的第几天 dayOfYear
+
+```js
+const dayOfYear = (date) => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+```
+
+### 生成随机十六进制颜色 randomHex
+
+> 可以使用 Math.random 和 padEnd 属性生成随机的十六进制颜色。
+
+```js
+const randomHex = () => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")}`;
+```
+
+### 数组去重 removeDuplicates
+
+```js
+const removeDuplicates = (arr) => [...new Set(arr)];
+```
+
+### 检查设备是否处于暗黑模式 deviceIsOpenDark
+
+```js
+const deviceIsOpenDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 ```

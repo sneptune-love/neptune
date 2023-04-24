@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/sneptune-love/neptune#readme",
   "devDependencies": {
-    "@commitlint/cli": "^12.0.0",
+    "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^12.1.4",
-    "husky": "^4.2.5"
+    "husky": "^8.0.3"
   },
   "husky": {
     "hooks": {
